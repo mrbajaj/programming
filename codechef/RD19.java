@@ -3,6 +3,16 @@ import java.util.*;
 
 class RD19{
 
+    // public int gcd(int n1, int n2){
+    //     for(int i = 1; i <= n1 && i <= n2; ++i)
+    //     {
+    //         // Checks if i is factor of both integers
+    //         if(n1 % i==0 && n2 % i==0)
+    //             gcd = i;
+    //     }
+    //     return fcd;
+    // }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int t = sc.nextInt();
@@ -15,9 +25,9 @@ class RD19{
             for(int i=0; i<n; i++){
                 seq[i] = sc.nextInt();
             }
-            System.out.printf("Original arr[] : %s\n",Arrays.toString(seq));
+            // System.out.printf("Original arr[] : %s\n",Arrays.toString(seq));
             Arrays.sort(seq);
-            System.out.printf("Sorted arr[] : %s\n",Arrays.toString(seq));
+            // System.out.printf("Sorted arr[] : %s\n",Arrays.toString(seq));
             for(int i=0; i<n-1 ; i++) {
                 for(int j=i+1; j<n ; j++){
                     if(seq[i] == 1){
@@ -30,12 +40,14 @@ class RD19{
                     }
                 }
             }
-            System.out.printf("Modified arr[] : %s\n",Arrays.toString(seq));
-            if(deletions < n){
-                System.out.printf("%d\n",deletions);
-            }else{
-                System.out.printf("-1\n");
+            // System.out.printf("Modified arr[] : %s\n",Arrays.toString(seq));
+            if(deletions >= n){
+                deletions = -1;
             }
+            if((n - deletions) == 1 && seq[0] != 1){
+                deletions = -1;
+            }
+            System.out.printf("%d\n",deletions);
         }
 
         sc.close();
