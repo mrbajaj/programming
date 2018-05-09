@@ -35,7 +35,7 @@ class XORAGN{
 }
 
 
-// https://www.codechef.com/MAY18B/problems/XORAGN
+// https://www.cc.com/MAY18B/problems/XORAGN
 /*
 Input:
     1

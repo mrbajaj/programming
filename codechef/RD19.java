@@ -57,7 +57,7 @@ class RD19{
 
 
 
-// https://www.codechef.com/MAY18B/problems/RD19
+// https://www.cc.com/MAY18B/problems/RD19
 /*  The greatest common divisor (GCD) of a sequence is the greatest positive integer which divides each element of this sequence.
 
     You are given a sequence A of positive integers with size N. You are allowed to delete up to N−1 elements from this sequence. (I.e., you may delete any number of elements, including zero, as long as the resulting sequence is non-empty.)

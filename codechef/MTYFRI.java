@@ -89,7 +89,7 @@ class MTYFRI{
 
 
 
-// https://www.codechef.com/MAY18B/problems/MTYFRI
+// https://www.cc.com/MAY18B/problems/MTYFRI
 
 /*
 Input:
