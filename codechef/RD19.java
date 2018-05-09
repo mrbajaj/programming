@@ -10,7 +10,7 @@ class RD19{
     //         if(n1 % i==0 && n2 % i==0)
     //             gcd = i;
     //     }
-    //     return fcd;
+    //     return gcd;
     // }
 
     public static void main(String[] args) {
