@@ -16,5 +16,7 @@ public class Array {
             // System.out.println(arr[i]);
             System.out.format("%d ",arr[i]);
         }
+
+        sc.close();
     }
 }
