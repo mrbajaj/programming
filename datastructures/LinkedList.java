@@ -71,47 +71,54 @@ public class LinkedList{
         
     }
 
+    public void insertSorted(int value){
+        
+        Node iterator = this.head;
+        int pos = 0;
+        while(iterator != null && iterator.data < value){
+            iterator = iterator.next;
+            pos += 1;
+        }
+        if(head == null || pos == 0){
+            this.insertAtBeginning(value);
+        }else if(iterator == null){
+            this.insertAtEnd(value);
+        }else{
+            this.insertIntermediate(value, pos+1);
+        }
+    }
+
     public static void main(String[] args){
-        LinkedList myList = new LinkedList();
-        
-        // myList.head = new Node(5);
-        // myList.head.next   = new Node(10);
-        // myList.head.next.next   = new Node(14);;
-        // myList.head.next.next.next   = new Node(15);;
-        // myList.head.next.next.next.next   = new Node(18);;
-       
-        // myList.head = myList.insertIntermediate(myList.head, 10, 0); myList.printList();
-        // myList.head = myList.insertAtBeginning(myList.head, 9); myList.printList();   
-        // myList.head = myList.insertAtBeginning(myList.head, 7); myList.printList();   
-        // myList.head = myList.insertAtBeginning(myList.head, 5); myList.printList();   
+        LinkedList myList = new LinkedList();  
 
-        // myList.head = myList.insertAtEnd(myList.head, 11); myList.printList();   
-        // myList.head = myList.insertAtEnd(myList.head, 12); myList.printList();   
-        // myList.head = myList.insertAtEnd(myList.head, 14); myList.printList();   
+        // myList.insertIntermediate(10, 0); myList.printList();
+        // myList.insertAtBeginning(9); myList.printList();   
+        // myList.insertAtBeginning(7); myList.printList();   
+        // myList.insertAtBeginning(5); myList.printList();   
+        // myList.insertAtEnd(11); myList.printList();   
+        // myList.insertAtEnd(13); myList.printList();   
+        // myList.insertAtEnd(14); myList.printList();   
+        // myList.insertIntermediate(18,10); myList.printList();
+        // myList.insertIntermediate(2, 0); myList.printList();
+        // myList.insertIntermediate(3, 1); myList.printList();
+        // myList.insertIntermediate(6, 4); myList.printList();   
+        // myList.insertIntermediate(12, 9); myList.printList();   
+        // myList.insertIntermediate(4, 3); myList.printList();
 
-        // myList.head = myList.insertIntermediate(myList.head, 2, 0); myList.printList();
-        // myList.head = myList.insertIntermediate(myList.head, 3, 1); myList.printList();
-        // myList.head = myList.insertIntermediate(myList.head, 6, 4); myList.printList();   
-        // myList.head = myList.insertIntermediate(myList.head, 11, 8); myList.printList();   
-        // myList.head = myList.insertIntermediate(myList.head, 15, 3); myList.printList();   
-
-        myList.insertIntermediate(10, 0); myList.printList();
-        
-        myList.insertAtBeginning(9); myList.printList();   
-        myList.insertAtBeginning(7); myList.printList();   
-        myList.insertAtBeginning(5); myList.printList();   
-
-        myList.insertAtEnd(11); myList.printList();   
-        myList.insertAtEnd(13); myList.printList();   
-        myList.insertAtEnd(14); myList.printList();   
-        
-        myList.insertIntermediate(18,10); myList.printList();
-
-        myList.insertIntermediate(2, 0); myList.printList();
-        myList.insertIntermediate(3, 1); myList.printList();
-        myList.insertIntermediate(6, 4); myList.printList();   
-        myList.insertIntermediate(12, 9); myList.printList();   
-        myList.insertIntermediate(4, 3); myList.printList();
+        myList.insertSorted(10); myList.printList();
+        myList.insertSorted(9); myList.printList();   
+        myList.insertSorted(7); myList.printList();   
+        myList.insertSorted(5); myList.printList(); 
+        myList.insertSorted(11); myList.printList();   
+        myList.insertSorted(13); myList.printList();   
+        myList.insertSorted(14); myList.printList();
+        myList.insertSorted(18); myList.printList();
+        myList.insertSorted(2); myList.printList();
+        myList.insertSorted(3); myList.printList();
+        myList.insertSorted(6); myList.printList();   
+        myList.insertSorted(12); myList.printList();   
+        myList.insertSorted(4); myList.printList();
+    
     }
 
 
