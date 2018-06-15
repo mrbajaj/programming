@@ -31,15 +31,28 @@ public class ListDemo
  
         l1.set(0, 5);   // replace 0th element with 5
         System.out.println(l1);  // [5, 2, 3, 2]
-        Integer a = 2;
-        System.out.println("first index of 2:" + l1.indexOf(a));
+        
+        System.out.println("first index of 2:\t" + l1.indexOf(2));
+        System.out.println("last index of 2:\t" + l1.lastIndexOf(2));
+        System.out.println("first index of 1:\t" + l1.indexOf(1));
 
-        System.out.println("first index of 2:" + l1.lastIndexOf(a));
-
-        ListIterator itr = l1.listIterator();
+        ListIterator itr = l1.listIterator(); 
         while(itr.hasNext()){
             System.out.print(itr.next() + "\t");
         }
         System.out.println();
+
+        ListIterator frd = l1.listIterator();
+        while(frd.hasNext()){
+            System.out.print(frd.next() + "\t");
+        }
+        System.out.println();
+
+        ListIterator<Integer> rev = l1.listIterator(l1.size());
+        while(rev.hasPrevious()){
+            System.out.print(rev.previous() + "\t");
+        }
+        System.out.println();
+
     }
 }
