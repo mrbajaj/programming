@@ -36,23 +36,24 @@ public class ListDemo
         System.out.println("last index of 2:\t" + l1.lastIndexOf(2));
         System.out.println("first index of 1:\t" + l1.indexOf(1));
 
-        ListIterator itr = l1.listIterator(); 
-        while(itr.hasNext()){
-            System.out.print(itr.next() + "\t");
-        }
-        System.out.println();
-
-        ListIterator frd = l1.listIterator();
+        // print list in forward order
+        ListIterator<Integer> frd = l1.listIterator(); // or :- ListIterator frd = l1.listIterator();
         while(frd.hasNext()){
             System.out.print(frd.next() + "\t");
         }
         System.out.println();
 
-        ListIterator<Integer> rev = l1.listIterator(l1.size());
+        // print list in reverse order
+        ListIterator<Integer> rev = l1.listIterator(l1.size()); // or :- ListIterator rev = l1.listIterator(l1.size()); 
         while(rev.hasPrevious()){
             System.out.print(rev.previous() + "\t");
         }
         System.out.println();
+
+
+        List<Integer> sub = new ArrayList<>();
+        sub = l1.subList(1,3); // sublist from 1st(including) to 3rd(exclusing)
+        System.out.println(sub);
 
     }
 }
