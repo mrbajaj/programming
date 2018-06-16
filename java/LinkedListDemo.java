@@ -34,8 +34,7 @@ public class LinkedListDemo
         System.out.println("Size of linked list = " + size);
  
         // Get and set elements from linked list
-        Object element = myList.get(2);
-        System.out.println("Element returned by get() : " + element);
+        System.out.println("Element returned by get(2) : " + myList.get(2));
         myList.set(2, "Y");
         System.out.println("Linked list after change : " + myList);
 
@@ -47,5 +46,24 @@ public class LinkedListDemo
 
         myList.offerLast("Z");
         System.out.println("After offerLast('Z'): " + myList);
+
+        System.out.println("Peeked: " + myList.peek());
+        System.out.println("After peek(): " + myList);
+
+        System.out.println("Peeked: " + myList.peekFirst());
+        System.out.println("After peekFirst(): " + myList);
+
+        System.out.println("Peeked: " + myList.peekLast());
+        System.out.println("After peekLast(): " + myList);
+
+
+        System.out.println("Polled: " + myList.poll());
+        System.out.println("After poll(): " + myList);
+
+        System.out.println("Polled: " + myList.pollFirst());
+        System.out.println("After pollFirst(): " + myList);
+
+        System.out.println("Polled: " + myList.pollLast());
+        System.out.println("After pollLast(): " + myList);
     }
 }
