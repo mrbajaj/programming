@@ -112,5 +112,22 @@ class SHKNUM{
         powerMap.put(18, 262144);   
         powerMap.put(17, 131072);   
         powerMap.put(16, 65536);   
+        powerMap.put(15, 32768);   
+        powerMap.put(14, 16384);   
+        powerMap.put(13, 8192);   
+        powerMap.put(12, 4096);   
+        powerMap.put(11, 2048);   
+        powerMap.put(10, 1024);   
+        powerMap.put(9, 512);   
+        powerMap.put(8, 256);
+        powerMap.put(7, 128);   
+        powerMap.put(6, 64);   
+        powerMap.put(5, 32);   
+        powerMap.put(4, 16);
+        powerMap.put(3, 8);
+        powerMap.put(2, 4);
+        powerMap.put(1, 2);
+        powerMap.put(0, 1);
+
     }
 }
