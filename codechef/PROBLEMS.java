@@ -5,9 +5,9 @@ class PROBLEMS {
         Scanner sc = new Scanner(System.in);
         int problems = sc.nextInt();
         int subtasks = sc.nextInt();
-        ArrayList<Integer> difficulty = new ArrayList<>();
-        Map<Integer, Integer> problemData = new HashMap<>();
-
+        Map<Integer,Integer> difficulty = new TreeMap<>();
+        Map<Integer, Integer> problemData = new TreeMap<>();
+        Integer increment = 0;
         for (int p = 0; p < problems; p++) {
             Integer[] scores = new Integer[subtasks];
             for (int s = 0; s < subtasks; s++) {
@@ -21,50 +21,47 @@ class PROBLEMS {
             for (int s = 0; s < subtasks; s++) {
                 problemData.put(scores[s], participants[s]);
             }
-
-            difficulty.add(p, calcDefficulty(problemData));
+            Integer diff = calcDefficulty(problemData);
+            while( difficulty.containsKey(diff + increment) ){
+                increment++;
+            }
+            
+            difficulty.put( diff + increment, p+1);
+            // difficulty.add(p, calcDefficulty(problemData));
             problemData.clear();
         }
-
-        printProblemIndexWrtoDifficulty(difficulty);
+        // System.out.println(difficulty.toString());
+        printProblemIndexWrtoDifficulty(difficulty.values());
         sc.close();
     }
 
-    public static int calcDefficulty(Map<Integer, Integer> problemData) {
+    public static int calcDefficulty(Map<Integer, Integer> sortedProblemData) {
         int difficulty = 0;
-        TreeMap<Integer, Integer> sortedProblemData = new TreeMap<>();
-        sortedProblemData.putAll(problemData);
-        int i = 0;
+        // System.out.println(sortedProblemData.toString());
+        Set<Integer> keys = sortedProblemData.keySet();
         Integer prevValue = 0, currValue;
-        for (Map.Entry<Integer, Integer> entry : sortedProblemData.entrySet()) {
-            if (i == 0) {
+        
+        int i = 0;
+        for (Integer key : keys) {
+            if(i == 0){
                 i = 1;
-                prevValue = entry.getValue();
+                prevValue = sortedProblemData.get(key);
                 continue;
             }
-            currValue = entry.getValue();
-            if (prevValue > currValue) {
+            currValue = sortedProblemData.get(key);
+            if(prevValue > currValue){
                 difficulty++;
             }
+
             prevValue = currValue;
         }
-
-        sortedProblemData.clear();
+        // System.out.println(sortedProblemData.toString());
         return difficulty;
     }
 
-    public static void printProblemIndexWrtoDifficulty(ArrayList<Integer> difficulty) {
-        int problemCount = difficulty.size();
-        Integer max = Collections.max(difficulty);
-        Integer placeHolder = max + 1;
-        Integer min, currMinIndex;
-        while (problemCount != 0) {
-            min = Collections.min(difficulty);
-            currMinIndex = difficulty.indexOf(min);
-            System.out.format("%d ", currMinIndex + 1);
-            difficulty.set(currMinIndex, placeHolder);
-            problemCount--;
+    public static void printProblemIndexWrtoDifficulty(Collection<Integer> difficulty) {
+        for (Integer val: difficulty) {
+            System.out.println(val);
         }
-        System.out.println();
     }
 }
