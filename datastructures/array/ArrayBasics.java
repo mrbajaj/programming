@@ -13,13 +13,16 @@ public class ArrayBasics {
         int P = sc.nextInt();
 
         HelperClass helper = new HelperClass();
-        System.out.print("-----------One D Array--------------\n");
+        System.out.print("-----------One D Array of int--------------\n");
         helper.ArrayProcesser(N,sc);
+
+        System.out.print("-----------One D Array of Integers--------------\n");
+        helper.ArrayProcesser(N);
         
-        System.out.print("-----------Two D Array--------------\n");
+        System.out.print("-----------Two D Array of int--------------\n");
         helper.ArrayProcesser(N,M,sc);
 
-        System.out.print("-----------Three D Array--------------\n");
+        System.out.print("-----------Three D Array of int--------------\n");
         helper.ArrayProcesser(N,M,P,sc);
         
         System.out.print("-----------Array of objects--------------\n");
@@ -34,6 +37,12 @@ class HelperClass{
         // Process one Dimentional array
         int[] arr = new int[N];
         
+        System.out.print("Default values for int array:\t");    
+        for(int x : arr){
+            System.out.print(x + " ");    
+        }
+        System.out.println();    
+
         // iterate using normal for loop
         System.out.print("Enter " + N + " Values\n");
         for(int i=0; i<N; i++){
@@ -52,7 +61,47 @@ class HelperClass{
         for(int i=N-1; i>=0; i--){
             System.out.print(arr[i] + " ");
         }
+        System.out.print("\n");
+
+
+        System.out.println("Arr Class name:\t" + arr.getClass().getName());
+        System.out.print("\n\n");
+        
+    }
+
+
+    public void ArrayProcesser(int N){
+        Integer[] arrObj = new Integer[N];
+        // Default value for array of Integers
+        System.out.print("Default:\t");    
+        for (Integer ao : arrObj) {
+            if(ao == null){
+                System.out.print(ao + " ");
+            }
+        }
         System.out.println();
+
+        // initialize with mupltiple of 3
+        for(int i=0; i < N; i++){
+            arrObj[i] = i*3;
+        }
+
+        System.out.print("Unboxed Values:\t");    
+        for (Integer ao : arrObj) {
+            if(ao != null){
+                System.out.print(ao.intValue() + " ");
+            }
+        }
+        System.out.println();
+
+
+        System.out.println("arrObj Class name:\t" + arrObj.getClass().getName());
+        System.out.print("\n\n");
+        // for (Object ao : arrObj) {
+        //     if(ao == null){
+        //         System.out.print(ao);
+        //     }
+        // }
     }
     
     public void ArrayProcesser(int N, int M, Scanner sc){
@@ -77,7 +126,8 @@ class HelperClass{
             System.out.println();
         }
 
-        System.out.println();
+        System.out.println("Mat Class name:\t" + mat.getClass().getName());
+        System.out.print("\n\n");
     }
     
     public void ArrayProcesser(int N, int M, int P, Scanner sc){
@@ -94,7 +144,8 @@ class HelperClass{
             }
         }
 
-        System.out.println();
+        System.out.println("Space Class name:\t" + space.getClass().getName());
+        System.out.print("\n\n");
     }
 
     public void ArrayProcesser(Scanner sc){
@@ -113,7 +164,10 @@ class HelperClass{
                 System.out.println(o);
             }
         }
+        System.out.println("Emps Class name:\t" + emps.getClass().getName());
+        System.out.print("\n\n");
     }
+
 }
 
 class Employee{
