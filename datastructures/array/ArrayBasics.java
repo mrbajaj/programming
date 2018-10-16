@@ -22,13 +22,16 @@ public class ArrayBasics {
         System.out.print("-----------Three D Array--------------\n");
         helper.ArrayProcesser(N,M,P,sc);
         
-        
+        System.out.print("-----------Array of objects--------------\n");
+        helper.ArrayProcesser(sc);
+
         sc.close();
     }
 }
 
 class HelperClass{
     public void ArrayProcesser(int N, Scanner sc){
+        // Process one Dimentional array
         int[] arr = new int[N];
         
         // iterate using normal for loop
@@ -53,6 +56,7 @@ class HelperClass{
     }
     
     public void ArrayProcesser(int N, int M, Scanner sc){
+        // Process two Dimentional array
         int[][] mat = new int[N][M];   
 
         System.out.print("Enter " + N*M + " Values\n");
@@ -77,6 +81,7 @@ class HelperClass{
     }
     
     public void ArrayProcesser(int N, int M, int P, Scanner sc){
+        // Process three Dimentional array
         int[][][] space = new int[N][M][P];   
 
         System.out.print("Enter " + N*M*P + " Values\n");
@@ -90,5 +95,32 @@ class HelperClass{
         }
 
         System.out.println();
+    }
+
+    public void ArrayProcesser(Scanner sc){
+        // Process array of user defined type
+        Employee[] emps = new Employee[5];
+        emps[0]= new Employee(11, "Alice");
+        emps[1]= new Employee(22, "Bob");
+        emps[2]= new Employee(33, "Jim");
+        // emps[4]= new Employee(55, "Hyderabad");
+
+        for(Object o: emps){
+            if(o instanceof Employee){ // to avoid NullPointerException
+                Employee emp = (Employee)o;
+                System.out.println(emp.id+" "+emp.name);
+            }else if(o == null){
+                System.out.println(o);
+            }
+        }
+    }
+}
+
+class Employee{
+    int id;
+    String name;
+    Employee(int id, String name){
+        this.id = id;
+        this.name = name;
     }
 }
