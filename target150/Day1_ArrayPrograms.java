@@ -1,5 +1,12 @@
 /* Programm to understand basic concepts of arrat
- *
+ * Traverse
+ * Min / Max
+ * Reverse
+ * Rotate
+ 
+ * Assumptions:
+    * Zero is not considered the valid value in the array
+    * Array does not contain the negative values
 */
 import java.util.*;
 import java.util.stream.*;
@@ -94,23 +101,26 @@ public class Day1_ArrayPrograms{
         int bound = sc.nextInt();
         MyArray obj = new MyArray(n);
         
-        // Random r = new Random();
         for(int i=0; i<n; i++){
             // obj.insert(sc.nextInt(), i);
-            obj.insert(new Random().nextInt(bound), i);
+            obj.insert(new Random().nextInt(bound)+1, i);
         }
         
+        // traverse through array
         System.out.print("Original Array\t:");
         obj.printArray();
         int atpos = new Random().nextInt(n);
         System.out.println("AtPos "+atpos+"\t:" + obj.get(atpos));
+
+        // min/max of array
         System.out.println("Min\t:" + obj.getMin());
         System.out.println("Max\t:" + obj.getMax());
         System.out.println("Sum\t:" + obj.getSum());
+        
+        // reverse the array
         obj.reverse();
         System.out.print("After Reverse\t:");
         obj.printArray();
-        
         
         sc.close();
     }
