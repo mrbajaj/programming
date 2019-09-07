@@ -162,6 +162,7 @@ class MySinglyLinkedList{
     }
 
     /**
+     * Delete at the last node of the linked list
      */
     public void deleteAtEnd(){
         Node prev = head;
