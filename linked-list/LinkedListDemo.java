@@ -4,13 +4,17 @@ public class LinkedListDemo{
     public static void main(String[] args) {
         MySinglyLinkedList myList = new MySinglyLinkedList();
 
-        myList.insertAtFront(new Node(5));
-        myList.insertAtFront(new Node(3));
-        myList.insertAtEnd(new Node(9));
+        myList.insertAtFront(new Node(5)); myList.print();
+        myList.insertAtFront(new Node(3)); myList.print();
+        myList.insertAtEnd(new Node(9)); myList.print();
+        myList.insertAtPosition(new Node(1), 1); myList.print();
+        
+        myList.deleteAtPosition(2); myList.print();
+        
+        myList.insertAtPosition(new Node(9), 2); myList.print();
 
-        myList.insertAtPosition(new Node(1), 1);
-
-        myList.print();
+        myList.deleteNodeWithValue(9); myList.print();
+    
     }
 
 }
@@ -39,6 +43,10 @@ class MySinglyLinkedList{
         head = null;
     }
 
+    /**
+     * Insert the front of the linked list
+     * @param n
+     */
     public void insertAtFront(Node n){
         n.next = head;
         head = n;
@@ -69,6 +77,9 @@ class MySinglyLinkedList{
      * @param pos
      */
     public void insertAtPosition(Node n, int pos){
+        if(pos < 1){
+            System.out.println("Invalid position to insert");
+        }
         if(pos == 1){
             insertAtFront(n);
             return;
@@ -76,8 +87,7 @@ class MySinglyLinkedList{
 
         Node itr = head;
         
-        while(pos-1 != 0 && itr != null){
-            System.out.println(itr.val + "   " + pos);
+        while(pos-1 != 1 && itr != null){
             itr = itr.next;
             pos -= 1;
         }
@@ -86,7 +96,6 @@ class MySinglyLinkedList{
             insertAtEnd(n);
             return;
         }
-        System.out.println(itr.val + "   " + pos);
         n.next = itr.next;
         itr.next = n;
 
@@ -113,7 +122,77 @@ class MySinglyLinkedList{
             itr = itr.next;
         }
         System.out.println();
-
     }
 
+    /**
+     * Delete the node at the given postion (starting from 1), 
+     * if position is greater than size of linked list then do not delte anything
+     * @param pos
+     */
+    public void deleteAtPosition(int pos){
+        if(pos < 1){
+            System.out.println("Invalid position to insert");
+            return;
+        }
+        if(pos == 1){
+            deleteAtFront();
+            return;
+        }
+        
+        Node itr = head;
+        while(pos-1 != 1 && itr != null){
+            //System.out.println(itr.val + "   " + pos);
+            pos -= 1;
+            itr = itr.next;
+        }
+
+        if(itr != null){
+            itr.next = itr.next.next;
+        }
+    }
+
+    /**
+     * Delete the node from the front of the linked list
+     */
+    public void deleteAtFront(){
+        if(head == null){
+            return;
+        }
+        head = head.next;
+    }
+
+    /**
+     */
+    public void deleteAtEnd(){
+        Node prev = head;
+        Node itr = head.next;
+        while(itr != null){
+            prev = itr;
+            itr = itr.next;
+        }
+        prev.next = null;
+    }
+
+
+    /**
+     * Delete all the nodes with given value
+     * @param val
+     */
+    public void deleteNodeWithValue(int val){
+        if(head == null)
+            return;
+        
+        Node itr = head;
+        int count = 1;
+        while(itr != null){
+            if(itr.val == val){
+                deleteAtPosition(count);
+                
+            }else{
+                count += 1;
+            }
+            itr = itr.next;
+            
+        }
+    }
 }
