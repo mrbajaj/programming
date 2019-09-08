@@ -1,4 +1,8 @@
 
+/**
+ * 
+ * @author Mayur Bajaj
+ */
 public class LinkedListDemo{
 
     public static void main(String[] args) {
@@ -19,6 +23,10 @@ public class LinkedListDemo{
 
 }
 
+/**
+ * 
+ * @author Mayur Bajaj
+ */
 class Node{
     Integer val;
     Node next;

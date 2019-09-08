@@ -1,3 +1,7 @@
+/**
+ * 
+ * @author Mayur Bajaj
+ */
 public class StackDemo{
     
     public static void main(String[] args) {
@@ -16,10 +20,14 @@ public class StackDemo{
         stack.push(8); stack.print();
 
         System.out.println("Peek Stack Element:\t" + stack.peek());
-        
+
     }
 }
 
+/**
+ * 
+ * @author Mayur Bajaj
+ */
 class MyStack{
     static final int MAX = 100;
     private int TOP;
@@ -34,7 +42,7 @@ class MyStack{
 
         while(itr != -1){
             System.out.print(a[itr] + " ");
-            itr -= 1;
+            itr--;
         }
         System.out.println();
 
