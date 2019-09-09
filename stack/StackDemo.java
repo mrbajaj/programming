@@ -56,7 +56,7 @@ class MyStack{
         if(TOP == -1){
             // underflow
             System.out.println("Underflow");
-            return -1;
+            return Integer.MIN_VALUE;
         }
 
         return a[TOP--];
@@ -67,7 +67,7 @@ class MyStack{
      * @param item
      */
     public void push(int item){
-        if(TOP == MAX-1){
+        if(isFull() == true){
             //overflow
             System.out.println("Overflow");
             return;
@@ -83,7 +83,7 @@ class MyStack{
      * @return
      */
     public int peek(){
-        if(TOP == -1){
+        if(isEmpty() == true){
             // underflow
             System.out.println("Underflow");
             return -1;
@@ -98,11 +98,15 @@ class MyStack{
      * @return
      */
     public Boolean isEmpty(){
-        if(TOP == -1){
-            return true;
-        }else{
-            return false;
-        }
+        return (TOP == -1);
+    }
+
+    /**
+     * Check the stack is full or not
+     * @return
+     */
+    public Boolean isFull(){
+        return (TOP == MAX-1);
     }
 
     /**
