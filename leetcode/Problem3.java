@@ -1,5 +1,9 @@
 /**
  * URL: https://leetcode.com/problems/longest-substring-without-repeating-characters/
+ * 
+ * Note: solved but not the optimal solution
+ * Time Complexity:
+ * Space Complexity:
  */
 import java.util.Scanner;
 
