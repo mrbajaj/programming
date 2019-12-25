@@ -8,15 +8,16 @@ import java.util.Map;
 
 class Problem13{
     public static void main(String[] args) {
-        // String roman  = "CDXCIX"; // 499
-        // String roman  = "CCCXCI"; //391
-
-        // String roman  = "I"; // 1
-        // String roman  = "V"; // 5
-        String roman  = "IV"; // 4
         
+        System.out.println("Ans: " + romanToInt("CDXCIX")); // 499
 
-        System.out.println("Ans: " + romanToInt(roman));
+        System.out.println("Ans: " + romanToInt("CCCXCI")); // 391
+
+        System.out.println("Ans: " + romanToInt("I")); // 1
+
+        System.out.println("Ans: " + romanToInt("V")); // 5
+
+        System.out.println("Ans: " + romanToInt("IV")); // 4
     }
 
     public static int romanToInt(String s) {
@@ -48,6 +49,7 @@ class Problem13{
             }
         }
 
+        System.out.println();
         return ans;
         
     }
