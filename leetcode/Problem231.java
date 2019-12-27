@@ -7,9 +7,9 @@
     public static void main(String[] args) {
         Problem231 obj = new Problem231();
         // int n = 1;
-        // int n = 8;
+        int n = 8;
         // int n = 6;
-        int n = 11;
+        // int n = 11;
         // int n = 2048 * 2048;
 
 
