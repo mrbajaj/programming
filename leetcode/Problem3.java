@@ -13,11 +13,11 @@ class Problem3{
         Problem3 obj = new Problem3();
         Scanner sc = new Scanner(System.in);
 
-        String s = sc.nextLine();
+        String s = sc.nextLine(); //abcabcbb
 
         int maxLen = obj.lengthOfLongestSubstring(s);
 
-        System.out.println(maxLen);
+        System.out.println(maxLen); // 3
 
         sc.close();
     }
@@ -25,17 +25,16 @@ class Problem3{
     public int lengthOfLongestSubstring(String s) {
         int strLen = s.length();
 
-        int maxLen = 0, curLen = 0, startIndex = -1;
+        int maxLen = 0, curLen = 0;
 
         for(int i = 0; i < strLen; i++ ){
             for(int j = i + maxLen; j < strLen; j++){
                 // System.out.print(s.substring(i, j+1) + "\t");
-                if( isValidSubstring(s, i, j)){
+                if( this.isValidSubstring(s, i, j)){
                     // System.out.println("Valid");
                     curLen = j - i + 1;
                     if(maxLen < curLen){
                         maxLen = curLen;
-                        startIndex = i;
                     }
                     
                 }else{
@@ -48,7 +47,7 @@ class Problem3{
         return maxLen;
     }
 
-    public static boolean isValidSubstring(String str, int start, int end){
+    public boolean isValidSubstring(String str, int start, int end){
         int[] charCount = new int[256];
         
         for(int i = start; i <= end; i++){
