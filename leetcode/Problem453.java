@@ -1,4 +1,3 @@
-
 /**
  * URL: https://leetcode.com/problems/minimum-moves-to-equal-array-elements/
  * 
@@ -9,11 +8,11 @@ import java.util.Arrays;
 class Problem453{
 
     public static void main(String[] args) {
-        // int[] nums = new int[]{1,2,3};
+        int[] nums = new int[]{1,2,3};
 
         // int[] nums = new int[]{1,4,5,7,11};
 
-        int[] nums = new int[]{83,86,77,15,93,35,86,92,49,21};
+        // int[] nums = new int[]{83,86,77,15,93,35,86,92,49,21};
 
         
 
