@@ -9,12 +9,12 @@ import java.util.Arrays;
 class Problem66{
 
     public static void main(String[] args) {
-        // int[] digits = new int[]{1,2,3};
+        int[] digits = new int[]{1,2,3};
         // int[] digits = new int[]{9,9,9};
         
         // int[] digits = new int[]{4,3,2,1};
         // int[] digits = new int[]{4,5,9,9};
-        int[] digits = new int[]{0};
+        // int[] digits = new int[]{0};
 
         System.out.println("Ans" + Arrays.toString( plusOne(digits) ));
 
