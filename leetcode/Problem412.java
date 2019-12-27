@@ -1,4 +1,3 @@
-
 /**
  * URL: https://leetcode.com/problems/fizz-buzz/ 
  * 
@@ -9,7 +8,9 @@ import java.util.List;
 class Problem412 {
 
     public static void main(String[] args) {
-        int n = 15;
+        // int n = 15;
+
+        int n = 21;
 
         System.out.println("Ans: " + fizzBuzz(n));
 
