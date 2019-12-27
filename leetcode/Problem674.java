@@ -9,7 +9,7 @@
 class Problem674{
 
     public static void main(String[] args) {
-        // int[] nums = new int[]{1,3,5,4,7};
+        int[] nums = new int[]{1,3,5,4,7};
 
         // int[] nums = new int[]{2,2,2,2,2};
 
@@ -17,7 +17,7 @@ class Problem674{
 
         // int[] nums = new int[]{1};
 
-        int[] nums = new int[]{1,3,5,7};
+        // int[] nums = new int[]{1,3,5,7};
 
         System.out.println("Ans: " + findLengthOfLCIS(nums));
 
