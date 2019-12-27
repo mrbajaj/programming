@@ -21,18 +21,18 @@ class Problem563{
         Problem563 obj = new Problem563();
 
         // Test1
-        // TreeNode root = new TreeNode(1);
-        // root.left = new TreeNode(2);
-        // root.right = new TreeNode(3);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
 
         // Test2
-        TreeNode root = new TreeNode(1);
-        root = new TreeNode(4);  
-        root.left = new TreeNode(2);  
-        root.right = new TreeNode(9);  
-        root.left.left = new TreeNode(3);  
-        root.left.right = new TreeNode(8);  
-        root.right.right = new TreeNode(7);  
+        // TreeNode root = new TreeNode(1);
+        // root = new TreeNode(4);  
+        // root.left = new TreeNode(2);  
+        // root.right = new TreeNode(9);  
+        // root.left.left = new TreeNode(3);  
+        // root.left.right = new TreeNode(8);  
+        // root.right.right = new TreeNode(7);  
         
         
         int x = obj.findTilt(root);
