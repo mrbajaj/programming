@@ -1,5 +1,6 @@
 /**
  * URL: https://leetcode.com/problems/maximum-number-of-balloons/
+ * 
  */
 import java.util.Scanner;
 
@@ -12,7 +13,9 @@ class Problem1189{
 
         int count = obj.maxNumberOfBalloons(text.toLowerCase());
 
-        System.out.println(count);
+        System.out.println("Ans: " + count);
+
+        sc.close();
     }
 
     public int maxNumberOfBalloons(String text) {
