@@ -1,5 +1,4 @@
 /**
- * 
  * URL: https://leetcode.com/problems/same-tree/
  * 
  */
@@ -21,28 +20,28 @@ class Problem100{
         Problem100 obj = new Problem100();
        
         // Test1
-        // TreeNode p = new TreeNode(1);
-        // p.left = new TreeNode(2);
-        // p.right = new TreeNode(3);
-        // TreeNode q = new TreeNode(1);
-        // q.left = new TreeNode(2);
-        // q.right = new TreeNode(3);
+        TreeNode p = new TreeNode(1);
+        p.left = new TreeNode(2);
+        p.right = new TreeNode(3);
+        TreeNode q = new TreeNode(1);
+        q.left = new TreeNode(2);
+        q.right = new TreeNode(3);
 
         // Test2
-        TreeNode p = new TreeNode(1);
-        p = new TreeNode(4);  
-        p.left = new TreeNode(2);  
-        p.right = new TreeNode(9);  
-        p.left.left = new TreeNode(3);  
-        p.left.right = new TreeNode(8);  
-        p.right.right = new TreeNode(7);
-        TreeNode q = new TreeNode(1);
-        q = new TreeNode(4);  
-        q.left = new TreeNode(2);  
-        q.right = new TreeNode(9);  
-        q.left.left = new TreeNode(3);  
-        q.left.right = new TreeNode(8);  
-        q.right.right = new TreeNode(7);  
+        // TreeNode p = new TreeNode(1);
+        // p = new TreeNode(4);  
+        // p.left = new TreeNode(2);  
+        // p.right = new TreeNode(9);  
+        // p.left.left = new TreeNode(3);  
+        // p.left.right = new TreeNode(8);  
+        // p.right.right = new TreeNode(7);
+        // TreeNode q = new TreeNode(1);
+        // q = new TreeNode(4);  
+        // q.left = new TreeNode(2);  
+        // q.right = new TreeNode(9);  
+        // q.left.left = new TreeNode(3);  
+        // q.left.right = new TreeNode(8);  
+        // q.right.right = new TreeNode(7);  
         
         
         System.out.println("And: " + obj.isSameTree(p,q));
