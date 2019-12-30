@@ -23,7 +23,7 @@ class Problem1200{
         }
 
         List<List<Integer>> pairs = obj.minimumAbsDifference(arr);
-        System.out.println(pairs.toString());
+        System.out.println("Ans: " + pairs.toString());
         sc.close();
     }
 
