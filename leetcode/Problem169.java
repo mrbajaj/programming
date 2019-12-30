@@ -12,7 +12,7 @@ import java.util.Map;
     public static void main(String[] args) {
         // int[] nums = new int[]{3,2,3};
 
-        int[] nums = new int[]{2,2,1,1,1,2,2};
+        int[] nums = new int[]{2,2,1,1,1,2,2,1,1};
         System.out.println("Ans: " + majorityElement(nums));
 
     }
