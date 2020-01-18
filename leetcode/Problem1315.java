@@ -1,8 +1,3 @@
-import java.util.List;
-import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Queue;
-
 /**
  * URL: https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
  * 
