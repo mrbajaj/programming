@@ -6,7 +6,6 @@
  * Space Complexity: O(1)
  */
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.List;
 import java.util.ArrayList;;
 
@@ -14,17 +13,16 @@ class Problem1200{
 
     public static void main(String[] args) {
         Problem1200 obj = new Problem1200();
-        Scanner sc = new Scanner(System.in);
+        
+        System.out.println("Ans: " + obj.minimumAbsDifference(new int[]{4,2,1,3}));
 
-        int n = sc.nextInt();
-        int[] arr = new int[n];
-        for(int i=0; i<n; i++){
-            arr[i] = sc.nextInt();
-        }
+        System.out.println("Ans: " + obj.minimumAbsDifference(new int[]{1,3,6,10,15}));
 
-        List<List<Integer>> pairs = obj.minimumAbsDifference(arr);
-        System.out.println("Ans: " + pairs.toString());
-        sc.close();
+        System.out.println("Ans: " + obj.minimumAbsDifference(new int[]{3,8,-10,23,19,-4,-14,27}));
+     
+        
+        
+        
     }
 
     public List<List<Integer>> minimumAbsDifference(int[] arr) {
