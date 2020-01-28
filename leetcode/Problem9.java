@@ -9,6 +9,8 @@ class Problem9{
         Problem9 obj = new Problem9();
         System.out.println("Ans: " + obj.isPalindrome(121));
         System.out.println("Ans: " + obj.isPalindrome(-121));
+
+        System.out.println("Ans: " + obj.isPalindrome(222));
     }
 
     public boolean isPalindrome(int x) {
