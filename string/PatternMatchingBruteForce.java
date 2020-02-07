@@ -57,31 +57,4 @@ class PatternMatchingBruteForce{
         return -1;
     }
 
-
-    public int[] getPrefixArray(String P){
-        int M = P.length();
-        int[] psT = new int[M];
-        
-        int i = 1;
-        int len = 0;
-
-        psT[0] = len;
-        while (i < M) { 
-            if (P.charAt(i) == P.charAt(len)) { 
-                len++; 
-                psT[i] = len; 
-                i++; 
-            } else { 
-                if (len != 0) { 
-                    len = psT[len - 1]; 
-                } 
-                else { 
-                    psT[i] = len; 
-                    i++; 
-                } 
-            } 
-        } 
-       
-        return psT;
-    }
 }
