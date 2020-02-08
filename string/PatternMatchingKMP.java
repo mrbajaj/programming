@@ -43,7 +43,7 @@ class PatternMatchingKMP{
         System.out.println(Arrays.toString(psT4));
         firstIndex = obj.patterMatching(T, P, psT4);
         System.out.println(firstIndex + ":\t" + T.substring(firstIndex, firstIndex + P.length()));
-
+        System.out.println("-----------------------------------------");
 
         T = "PQRSPQRSPQRSPQRSPQRSPQRS";
         P = "AAACAAAA";
@@ -116,27 +116,5 @@ class PatternMatchingKMP{
         return lps;
     }
 
-    // int n = T.length(), m = P.length();
-    //     int i =0, j = 0 ;
-    //     while(i < n){
-            
-    //         while(j < m && T.charAt(i) == P.charAt(j)){
-    //             i++;
-    //             j++;
-    //         }
-
-    //         if(j == m){
-    //             return i - m;
-    //         }else{
-    //             if(j > 0){
-    //                 j = psT[j-1];
-    //             }else{
-    //                 i++;
-    //             }
-    //         }
-    //     }
-
-
-    //     return -1;
 }
 
