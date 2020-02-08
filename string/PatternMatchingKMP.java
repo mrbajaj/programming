@@ -43,30 +43,48 @@ class PatternMatchingKMP{
         System.out.println(Arrays.toString(psT4));
         firstIndex = obj.patterMatching(T, P, psT4);
         System.out.println(firstIndex + ":\t" + T.substring(firstIndex, firstIndex + P.length()));
+
+
+        T = "PQRSPQRSPQRSPQRSPQRSPQRS";
+        P = "AAACAAAA";
+        int[] psT5 = obj.getPrefixArray(P);
+        System.out.println("T: " + T);
+        System.out.println("P: " + P);
+        System.out.println(Arrays.toString(psT5));
+        firstIndex = obj.patterMatching(T, P, psT5);
+        if(firstIndex != -1){
+            System.out.println(firstIndex + ":\t" + T.substring(firstIndex, firstIndex + P.length()));
+        }else{
+            System.out.println("Not Found");
+        }
+        
         
     }
 
-    public int patterMatching(String T, String P, int[] psT){
-        int n = T.length(), m = P.length();
-        int i =0, j = 0 ;
-        while(i < n){
+    public int patterMatching(String T, String P, int[] lps){
+        int N = T.length();
+        int M = P.length();
+        int i =0, j = 0;
+        while(i < N && j < M){
             
-            while(j < m && T.charAt(i) == P.charAt(j)){
+            if(T.charAt(i) == P.charAt(j)){
                 i++;
                 j++;
-            }
-
-            if(j == m){
-                return i - m;
             }else{
-                if(j > 0){
-                    j = psT[j-1];
-                }else{
+
+                if(j == 0){
                     i++;
+                }else{
+
+                    j = lps[j-1];
+
                 }
             }
+        
         }
-
+        if(j == M){
+            return i - M;
+        }
 
         return -1;
     }
@@ -74,28 +92,51 @@ class PatternMatchingKMP{
 
     public int[] getPrefixArray(String P){
         int M = P.length();
-        int[] psT = new int[M];
-        
-        int i = 1;
-        int len = 0;
+        int lps[] = new int[M];
 
-        psT[0] = len;
-        while (i < M) { 
-            if (P.charAt(i) == P.charAt(len)) { 
-                len++; 
-                psT[i] = len; 
-                i++; 
-            } else { 
-                if (len != 0) { 
-                    len = psT[len - 1]; 
-                } 
-                else { 
-                    psT[i] = len; 
-                    i++; 
-                } 
-            } 
-        } 
-       
-        return psT;
+        int j = 0, i = 1;
+        lps[0] = 0;
+        while(i < M){
+
+            if(P.charAt(i) == P.charAt(j)){
+                lps[i] = j + 1;
+                j++; i++;
+            }else{
+                if(j == 0){
+                    lps[i] = 0;
+                    i++;
+                }else{
+                    j = lps[j-1];
+
+                }   
+
+            }
+
+        }
+        return lps;
     }
+
+    // int n = T.length(), m = P.length();
+    //     int i =0, j = 0 ;
+    //     while(i < n){
+            
+    //         while(j < m && T.charAt(i) == P.charAt(j)){
+    //             i++;
+    //             j++;
+    //         }
+
+    //         if(j == m){
+    //             return i - m;
+    //         }else{
+    //             if(j > 0){
+    //                 j = psT[j-1];
+    //             }else{
+    //                 i++;
+    //             }
+    //         }
+    //     }
+
+
+    //     return -1;
 }
+
