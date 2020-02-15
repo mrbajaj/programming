@@ -1,5 +1,5 @@
 /**
- * 
+ * Binary to decimal
  * 
  */
 class BinaryToDecimal{
