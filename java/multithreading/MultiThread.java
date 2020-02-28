@@ -1,35 +1,41 @@
-class MultiThread implements Runnable{    
-    private Integer tNum;
-    public MultiThread(Integer n){
-        this.tNum = n;
+/**
+ * Example: Creating a job to be excuted by different threads one after another
+ */
+class MyJob implements Runnable{    
+    private Integer jobNum;
+    public MyJob(Integer n){
+        this.jobNum = n;
     }
     @Override
     public void run() {
-        System.out.println("Run: "+ this.tNum + " " + Thread.currentThread().getName());
+        System.out.print("Runing Job: "+ this.jobNum + " \t" + Thread.currentThread().getName() +"\t :: \t");
         for(int i=1; i<=5; i++){
-            System.out.print(i*(this.tNum +1) + "\t");
+            System.out.print(i*(this.jobNum) + "\t");
         }
         System.out.println();
     }
+    
+}
 
+class MultiThread{   
     public static void main(String[] args) {
 
-        for(Integer i=0; i < 5; i++){
-            MultiThread m = new MultiThread(i);
+        for(Integer jobNum=1; jobNum <= 5; jobNum++){
+            MyJob m = new MyJob(jobNum);
             Thread t = new Thread(m);
+            t.setName("ThreadForJob" + jobNum);
             try{
                 t.start();
-                // System.out.println("Wating for " + t.getName() + " to complete");
                 t.join();
+                System.out.println("Completed\n");
             }catch(Exception e){
-                // 
+                System.out.println("Exception Occured");
             }
             
         }
         
     }
 }
-
 // class MultiThread implements Runnable{    
 //     @Override
 //     public void run() {
