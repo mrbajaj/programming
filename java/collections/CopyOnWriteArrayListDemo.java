@@ -27,11 +27,12 @@ class CopyOnWriteArrayListDemo implements Runnable{
         
         while(i.hasNext()){
             System.out.println(i.next());
+            // i.remove(); // not allowed it will throw UnsupportedOperationException
             try{Thread.sleep(300);}catch(Exception e){}
         }
 
         while(t.isAlive()){
-            
+
         }
 
         System.out.println(cList);
