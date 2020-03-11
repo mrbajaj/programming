@@ -4,23 +4,55 @@
  * I was asked without using extra memory: but solved with extra memory
  */
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.Iterator;
 
-class Problem136{
+public class Problem136{
     public static void main(String[] args) {
-        Problem136 obj = new Problem136();
+        Solution1 obj1 = new Solution1();
+        Solution2 obj2 = new Solution2();
 
-        System.out.println("Ans: " + obj.singleNumber(new int[]{2,2,1}) + "\n");
+        System.out.println("Ans: " + obj1.singleNumber(new int[]{2,2,1}) + "\n");
 
-        System.out.println("Ans: " + obj.singleNumber(new int[]{4,1,2,1,2}) + "\n");
+        System.out.println("Ans: " + obj1.singleNumber(new int[]{4,1,2,1,2}) + "\n");
 
-        System.out.println("Ans: " + obj.singleNumber(new int[]{}) + "\n");
+        System.out.println("Ans: " + obj1.singleNumber(new int[]{}) + "\n");
+
+        System.out.println("Ans: " + obj2.singleNumber(new int[]{2,2,1}) + "\n");
+
+        System.out.println("Ans: " + obj2.singleNumber(new int[]{4,1,2,1,2}) + "\n");
+
+        System.out.println("Ans: " + obj2.singleNumber(new int[]{}) + "\n");
 
         
 
         
     }
+}
+
+class Solution1{
+    public int singleNumber(int[] nums) {
+        if(nums.length == 0){
+            return 0;
+        }
+        Set<Integer> unique = new HashSet<>();
+        
+        for(int i=0; i< nums.length; i++){
+            if(unique.contains(nums[i])){
+                unique.remove(nums[i]);
+            }else{
+                unique.add(nums[i]);
+            }
+            
+        }
+        
+        return unique.iterator().next();
+    }
+}
+
+class Solution2{
 
     public int singleNumber(int[] nums) {
         // System.out.println(Arrays.toString(nums));
