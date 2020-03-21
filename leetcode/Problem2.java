@@ -1,120 +1,138 @@
 /**
- * URL:
+ * 
  * 
  */
+
 class Problem2{
-    static class ListNode {
-        int val;
+    static class ListNode{
+        Integer val;
         ListNode next;
-        ListNode(int x) { val = x; }
+        ListNode(int v){
+            this.val = v;
+            this.next = null;
+        }
+        @Override
+        public String toString() {
+            return String.valueOf(this.val);
+        }
     }
 
     public static void main(String[] args) {
-
         Problem2 obj = new Problem2();
 
-        // ListNode L1 = new ListNode(2);
-        // L1.next = new ListNode(4);
-        // L1.next.next = new ListNode(3);
-        // L1.next.next.next = new ListNode(9);
-        // L1.next.next.next.next = new ListNode(1);
+        ListNode a = new ListNode(2);
+        a.next = new ListNode(4);
+        a.next.next = new ListNode(3);
 
-        // ListNode L2 = new ListNode(5);
-        // L2.next = new ListNode(6);
-        // L2.next.next = new ListNode(7);
+        ListNode b = new ListNode(5);
+        b.next = new ListNode(6);
+        b.next.next = new ListNode(4);
 
-        // ListNode L2 = null;
+        ListNode sum = obj.addTwoNumbers(a, b);
+
+        obj.printList(sum);
         
-        ListNode L1 = new ListNode(5);
-        ListNode L2 = new ListNode(5);
-
-        printList( L1 );
-        printList( L2 );
-        printList( obj.addTwoNumbers(L1, L2) );
-
-
-
     }
 
-    public ListNode addTwoNumbers(ListNode L1, ListNode L2) {
-        ListNode n1= L1, n2 = L2;
-        ListNode result = null, n3 = null;
+    public ListNode addTwoNumbers(ListNode revL1, ListNode revL2) {
+        if(revL1 == null){
+            return revL2;
+        } 
+        if(revL2 == null){
+            return revL1;
+        }
+        ListNode result = null, prev = null;
+        
+        ListNode itr1 = revL1, itr2 = revL2;
 
-        int sum, digit, carry = 0 ;
+        int carry = 0;
+        while(itr1 != null && itr2 != null){
+            int sum = itr1.val + itr2.val + carry;
 
-        while(n1 != null && n2 != null){
-            sum = n1.val + n2.val + carry;
             carry = sum / 10;
-            digit = (carry != 0) ? sum % 10 : sum;
+            ListNode newNode = new ListNode(sum%10);
 
-            System.out.println("*sum: "+sum+"\t" + "*carry: "+carry+"\t" + "*digit: "+digit+"\t");
-
-            if(n3 == null){
-                n3 = new ListNode(digit);
-                result = n3;
+            if(result == null){
+                result = newNode;
+                prev = result;
             }else{
-                n3.next = new ListNode(digit);
-                n3 = n3.next;
+                prev.next = newNode;
+                prev = newNode;
             }
 
-            n1 = n1.next;
-            n2 = n2.next;
+            itr1 = itr1.next;
+            itr2 = itr2.next;
         }
 
-        while(n1 != null){
-            sum = n1.val + carry;
+        while(itr1 != null){
+            int sum = itr1.val + carry;
+
             carry = sum / 10;
-            digit = (carry != 0) ? sum % 10 : sum;
+            ListNode newNode = new ListNode(sum%10);
+            prev.next = newNode;
+            prev = newNode;
 
-            System.out.println("*sum: "+sum+"\t" + "*carry: "+carry+"\t" + "*digit: "+digit+"\t");
-
-            if(n3 == null){
-                n3 = new ListNode(digit);
-                result = n3;
-            }else{
-                n3.next = new ListNode(digit);
-                n3 = n3.next;
-            }
-
-            n1 = n1.next;
+            itr1 = itr1.next;
         }
 
-        while(n2 != null){
-            sum = n2.val + carry;
+        while(itr2 != null){
+            int sum = itr2.val + carry;
+
             carry = sum / 10;
-            digit = (carry != 0) ? sum % 10 : sum;
+            ListNode newNode = new ListNode(sum%10);
+            prev.next = newNode;
+            prev = newNode;
 
-            System.out.println("*sum: "+sum+"\t" + "*carry: "+carry+"\t" + "*digit: "+digit+"\t");            
-
-            if(n3 == null){
-                n3 = new ListNode(digit);
-                result = n3;
-            }else{
-                n3.next = new ListNode(digit);
-                n3 = n3.next;
-            }
-
-            n2 = n2.next;
+            itr2 = itr2.next;
         }
+
+        this.printList(result);
 
         if(carry != 0){
-            n3.next = new ListNode(carry);
-            n3 = n3.next;
+            ListNode newNode = new ListNode(carry);
+            prev.next = newNode;
         }
+
         return result;
-
-
     }
 
-    static public void printList(ListNode head){
-        ListNode curr = head;
-
-        while(null != curr){
-            System.out.print(curr.val + " ");
-            curr = curr.next;
+    public ListNode reverseList(ListNode l) {
+        if(l == null){
+            return l;
         }
 
-        System.out.println();
+        ListNode prev = null, curr = l, next = l.next;
+
+        while(curr != null){
+            next = curr.next;
+            curr.next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        return prev;
 
     }
+
+
+    public void printList(ListNode head){
+        ListNode itr = head;
+        while(itr!=null){
+            System.out.print(itr +" ");
+            itr = itr.next;
+        }
+        System.out.println();
+    }
+
+    public int lengthOfList(ListNode head){
+        int length = 0;
+        ListNode itr = head;
+        while(itr!=null){
+            length++;
+            itr = itr.next;
+        }
+        return length;
+        
+    }
+
 }
