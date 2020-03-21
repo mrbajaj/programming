@@ -19,18 +19,13 @@ class Problem344{
     }
 
     public void reverseString(char[] s) {
-
-        int i = 0, j = s.length -1;
-        char tmp;
-        while(i < j){
-            
-            tmp = s[i];
+        int i = 0, j = s.length - 1;   
+        while (i < j){
+            char tmp = s[i];
             s[i] = s[j];
             s[j] = tmp;
-
             i++;
             j--;
         }
-        
     }
 }
