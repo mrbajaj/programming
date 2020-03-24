@@ -1,5 +1,5 @@
 /**
- * URL: https://leetcode.com/problems/sum-of-nodes-with-even-valued-grandparent/
+ * URL: 
  * 
  */
 
@@ -20,66 +20,43 @@ class Problem1315 {
     public static void main(String[] args) {
         Problem1315 obj = new Problem1315();
 
-        TreeNode p = new TreeNode(1);
-        p.right = new TreeNode(2);
-        p.right.left = new TreeNode(3);
-
-        obj.printTree(p); System.out.println();
-        System.out.println("Ans: " + obj.sumEvenGrandparent(p) + "\n");
-
-        p = new TreeNode(4);  
-        p.left = new TreeNode(2);  
-        p.right = new TreeNode(9);  
-        p.left.left = new TreeNode(3);  
-        p.left.right = new TreeNode(8);  
-        p.right.right = new TreeNode(7);
-
-        obj.printTree(p); System.out.println();
-        System.out.println("Ans: " + obj.sumEvenGrandparent(p) + "\n");
-
-
-        // 6,  7,8,    2,7,1,3,    9,null,1,4,null,null,null,5
-
-        p = new TreeNode(6);  
+        TreeNode p = new TreeNode(6);  
         p.left = new TreeNode(7);  
-        p.right = new TreeNode(8);
+        p.right = new TreeNode(8);  
         p.left.left = new TreeNode(2);  
-        p.left.right = new TreeNode(7);
+        p.left.right = new TreeNode(7);  
         p.right.left = new TreeNode(1);
         p.right.right = new TreeNode(3);
-        p.left.left.left = new TreeNode(9);
-        p.left.left.right = new TreeNode(2); 
-        p.left.right.left = new TreeNode(1);
+        p.left.left.left = new TreeNode(9);  
+        p.left.right.left = new TreeNode(1);  
         p.left.right.right = new TreeNode(4);
-        // p.right.left.left = new TreeNode(1);
-        // p.right.left.right = new TreeNode(1);
-        // p.right.right.left = new TreeNode(3);
         p.right.right.right = new TreeNode(5);
 
         obj.printTree(p); System.out.println();
         System.out.println("Ans: " + obj.sumEvenGrandparent(p) + "\n");
     }
 
-
-    public int sumEvenGrandparent(TreeNode root){
+    public int sumEvenGrandparent(TreeNode root) {
         if(root == null){
             return 0;
         }
-        
-        return this.sumEvenGrandparent_Util(root, null, null);
-    }
+        int sum = 0;
 
-    public int sumEvenGrandparent_Util(TreeNode root, TreeNode parent, TreeNode grandParent){
-        if(root == null){
-            return 0;
+        if(root.val % 2 == 0){
+            sum += (root.left != null && root.left.left != null) ? root.left.left.val : 0;
+            sum += (root.left != null && root.left.right != null) ? root.left.right.val : 0;
+            sum += (root.right != null && root.right.left != null) ? root.right.left.val : 0;
+            sum += (root.right != null && root.right.right != null) ? root.right.right.val : 0;
         }
-
-        int currsum = (grandParent != null && (grandParent.val % 2 ) == 0) ? root.val : 0;
         
+        int leftSum = (root.left != null) ? sumEvenGrandparent(root.left) : 0;
+        int rightSum = (root.right != null) ? sumEvenGrandparent(root.right) : 0;
 
-        return currsum + sumEvenGrandparent_Util(root.left, root, parent) + sumEvenGrandparent_Util(root.right, root, parent); 
+        return sum + leftSum + rightSum;
+        
     }
 
+    
     public void printTree(TreeNode root) {
         
         if(root == null){
