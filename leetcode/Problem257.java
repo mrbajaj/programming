@@ -1,93 +1,83 @@
-import java.util.ArrayList;
+/**
+ * URL: 
+ * 
+ */
 import java.util.List;
-import java.util.Stack;
+import java.util.ArrayList;
 
 class Problem257 {
 
-    static public class TreeNode {
+    public static class TreeNode {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode(int x) { val = x; }
 
-        @Override
-        public String toString() {
-            
-            return val + " ";
+        TreeNode(int x) {
+            val = x;
+            left = null;
+            right = null;
+        }
+        public String toString(){
+            return this.val + " ";
         }
     }
 
     public static void main(String[] args) {
         Problem257 obj = new Problem257();
-        TreeNode root = null;
 
-        System.out.println( obj.binaryTreePaths(root) );
+        TreeNode p = new TreeNode(1);
+        p.left = new TreeNode(2);
+        p.left.right = new TreeNode(5);
+        p.right = new TreeNode(3);
+        obj.printTree(p); System.out.println();
+        System.out.println("Ans: " + obj.binaryTreePaths(p) + "\n");
 
-        root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.left = new TreeNode(4);
-        root.left.right = new TreeNode(5);
-        root.right.left = new TreeNode(6);
-        root.right.right = new TreeNode(7);
-
-        System.out.println( obj.binaryTreePaths(root));
-
-        root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(3);
-        root.left.right = new TreeNode(5);
-
-        System.out.println( obj.binaryTreePaths(root));
-
+        p = new TreeNode(4);  
+        p.left = new TreeNode(2);  
+        p.right = new TreeNode(9);  
+        p.left.left = new TreeNode(3);  
+        p.left.right = new TreeNode(8);  
+        p.right.right = new TreeNode(7);
+        obj.printTree(p); System.out.println();
+        System.out.println("Ans: " + obj.binaryTreePaths(p) + "\n");
     }
 
     public List<String> binaryTreePaths(TreeNode root) {
-        List<String> list = new ArrayList<>();
-        Stack<Integer> stack = new Stack<>();
+        List<String> paths = new ArrayList<>();
+        List<String> currPath = new ArrayList<>();
+        this.preorder(root, paths, currPath);
 
-        this.binaryTreePathsRecursive(root, list, stack);
-
-        List<String> listFormeted = new ArrayList<>();
-        for(String l: list){
-            String x = l.replace(", ", "->");
-            x = x.replace("[", "");
-            x = x.replace("]", "");
-            listFormeted.add(x);
-        }
-        
-
-        return listFormeted;
-        // return new ArrayList<>();
-        
+        return paths;
     }
 
-    public void binaryTreePathsRecursive(TreeNode root, List<String> list, Stack<Integer> stack){
+    public void preorder(TreeNode root, List<String> paths, List<String> currPath){
         if(root == null){
             return;
         }
-        stack.push(root.val);
-        binaryTreePathsRecursive(root.left, list, stack);
 
+        currPath.add(String.valueOf(root.val));
         if(root.left == null && root.right == null){
-            // leaf node
-            list.add(stack.toString());
+            // System.out.println("root: " + root + "currPath: " + currPath);
+            paths.add( String.join("->", currPath) );
+            currPath.remove( currPath.size() - 1 );
+            return;
         }
 
-        binaryTreePathsRecursive(root.right, list, stack);
+        preorder(root.left, paths, currPath);
+        preorder(root.right, paths, currPath);
 
-        stack.pop();
-
+        currPath.remove( currPath.size() - 1 );
     }
 
-    public String getPath(Stack<Integer> stack){
-        // Stack<Integer> tmp = stack;
-        String s = stack.toString();
+    public void printTree(TreeNode root) {
         
-        System.out.println(s);
+        if(root == null){
+            return;
+        }
+        printTree(root.left);
+        System.out.print(root.val + " ");
+        printTree(root.right);
         
-        return s;
-
     }
-    
+
 }
