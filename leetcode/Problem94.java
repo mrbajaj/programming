@@ -45,25 +45,18 @@ class Problem94 {
 
     public List<Integer> inorderTraversal(TreeNode root) {
         List<Integer> list = new ArrayList<>();
-
-        inorderTraversalRecursive(root, list);
-
+        this.helper(root, list);
         return list;
-        
     }
-
-    public List<Integer> inorderTraversalRecursive(TreeNode root,  List<Integer> list){
+    
+    public void helper(TreeNode root, List<Integer> list){
         if(root == null){
-            return list;
+            return;
         }
-
-        inorderTraversalRecursive(root.left, list);
+        helper(root.left, list);
         list.add(root.val);
-        inorderTraversalRecursive(root.right, list);
-
-        return list;
+        helper(root.right, list);
     }
-
 
     public List<Integer> inorderTraversalIterative(TreeNode root) {
 
