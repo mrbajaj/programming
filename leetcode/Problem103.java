@@ -51,41 +51,30 @@ class Problem103{
     }
 
     public List<List<Integer>> zigzagLevelOrder(TreeNode root) {
-        boolean isForward = true;
-        List<List<Integer>> ans = new ArrayList<List<Integer>>();
-
+        List<List<Integer>> allList = new ArrayList<List<Integer>>();
+        TreeNode dummy = new TreeNode(0), prev = null;
         if(root == null){
-            return ans;
+            return allList;
         }
         Queue<TreeNode> queue = new LinkedList<>();
-
-        ArrayList<Integer> currLevel = new ArrayList<>();
-
         queue.add(root);
-        queue.add(null);
-
+        queue.add(dummy);
+        boolean forward = false;
+        List<Integer> currList = new ArrayList<>();
         while(!queue.isEmpty()){
             TreeNode curr = queue.remove();
-
-            if(curr == null){
-                if(isForward){
-                    ans.add(currLevel);
-                }else{
-                    Collections.reverse(currLevel);
-                    ans.add(currLevel);
-                }
-                isForward = !isForward;
-                currLevel = new ArrayList<>();
-                queue.add(null);
-                curr = queue.remove();
-
-                if(curr == null){
-                    break;
-                }
+            if(prev == curr){
+                break;
             }
 
-            if(curr != null){
-                currLevel.add(curr.val);
+            if(curr == dummy){
+                if(forward == true) { Collections.reverse(currList); } ;              
+                allList.add(currList);
+                queue.add(dummy);
+                currList = new ArrayList<>();
+                forward = !forward;
+                prev = curr;
+                continue;
             }
             
             if(curr.left != null){
@@ -96,13 +85,11 @@ class Problem103{
                 queue.add(curr.right);
             }
 
+            currList.add(curr.val);
+            prev = curr;
         }
 
-
-        return ans;
+        return allList;
     }
-
-
-
 
 }
