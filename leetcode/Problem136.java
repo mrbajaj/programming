@@ -13,6 +13,7 @@ public class Problem136{
     public static void main(String[] args) {
         Solution1 obj1 = new Solution1();
         Solution2 obj2 = new Solution2();
+        Solution2 obj3 = new Solution2();
 
         System.out.println("Ans: " + obj1.singleNumber(new int[]{2,2,1}) + "\n");
 
@@ -26,7 +27,12 @@ public class Problem136{
 
         System.out.println("Ans: " + obj2.singleNumber(new int[]{}) + "\n");
 
-        
+        System.out.println("Ans: " + obj3.singleNumber(new int[]{2,2,1}) + "\n");
+
+        System.out.println("Ans: " + obj3.singleNumber(new int[]{4,1,2,1,2}) + "\n");
+
+        System.out.println("Ans: " + obj3.singleNumber(new int[]{}) + "\n");
+
 
         
     }
@@ -89,5 +95,26 @@ class Solution2{
         }
         
         return singleElement;
+    }
+}
+
+class Solution3{
+    public int singleNumber(int[] nums) {
+        
+        Map<Integer,Integer> map = new HashMap<>();
+        
+        for(int i = 0; i < nums.length; i++){
+            int val = map.getOrDefault(nums[i], 0);
+            map.put(nums[i],val+1);
+        }
+        System.out.println(map);
+        Set<Integer> keys = map.keySet();
+        for(int key : keys){
+            if(map.get(key) == 1){
+                return key;
+            }
+        }
+        
+        return -1;
     }
 }
