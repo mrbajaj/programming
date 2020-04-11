@@ -3,22 +3,29 @@
  * 
  */
 import java.util.Arrays;
+import java.util.PriorityQueue;
+import java.util.Collections;
 
 class Problem215{
     public static void main(String[] args) {
 
-        Problem215 obj = new Problem215();
+        Solution1 sol1 = new Solution1();
+        Solution2 sol2 = new Solution2();
 
      
-        System.out.println("Ans: " +  obj.findKthLargest(new int[]{3,2,1,5,6,4}, 2) );
-        System.out.println("Ans: " +  obj.findKthLargest_Heap(new int[]{3,2,1,5,6,4}, 2) );
-        
-        System.out.println("Ans: " +  obj.findKthLargest(new int[]{3,2,3,1,2,4,5,5,6}, 4) );
-        System.out.println("Ans: " +  obj.findKthLargest_Heap(new int[]{3,2,3,1,2,4,5,5,6}, 4) );
+        System.out.println("Ans: " +  sol1.findKthLargest(new int[]{3,2,1,5,6,4}, 2) );
+        System.out.println("Ans: " +  sol1.findKthLargest(new int[]{3,2,3,1,2,4,5,5,6}, 4) );
+
+        System.out.println("Ans: " +  sol2.findKthLargest(new int[]{3,2,1,5,6,4}, 2) );
+        System.out.println("Ans: " +  sol2.findKthLargest(new int[]{3,2,3,1,2,4,5,5,6}, 4) );
      
         
         
     }
+
+}
+
+class Solution1{
 
     public int findKthLargest(int[] nums, int k) {
         
@@ -26,11 +33,30 @@ class Problem215{
         return nums[nums.length - k];
    
     }
+}
 
-    public int findKthLargest_Heap(int[] nums, int k) {
-        //TODO
-        return 0;
-   
+class Solution2{
+
+    public int findKthLargest(int[] nums, int k) {
+        PriorityQueue<Integer> maxHeap = new PriorityQueue<Integer>(Collections.reverseOrder()); 
+        
+        for(int i = 0; i < nums.length; i++){
+            System.out.println("maxHeap PriorityQueue : " + maxHeap + "\tTop:" + maxHeap.peek()); 
+            if(i < (nums.length - k + 1)){
+                maxHeap.add(nums[i]);
+            }else{
+                // current max is top of the heap
+                // if currentMax is greater than nums[i] then remove currentMax and add nums[i] into heap
+                int currentMax = maxHeap.peek();
+                if(currentMax > nums[i]){
+                    maxHeap.poll();
+                    maxHeap.add(nums[i]);
+                }
+            }
+        }
+        
+        // System.out.println(maxHeap.size());
+
+        return maxHeap.peek();
     }
-
 }
