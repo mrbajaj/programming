@@ -5,27 +5,41 @@
 class Problem1295{
 
     public static void main(String[] args) {
-        Problem1295 obj = new Problem1295();
+        Solution sol = new Solution();
 
-        System.out.println("Ans: " + obj.findNumbers(new int[]{12,345,2,6,7896}));
-        System.out.println("Ans: " + obj.findNumbers(new int[]{555,901,482,1771}));
+        System.out.println("Ans: " + sol.findNumbers(new int[]{12,345,2,6,7896}));
+        System.out.println("Ans: " + sol.findNumbers(new int[]{555,901,482,1771}));
+
+
     }
 
+    
+
+    
+}
+
+class Solution{
     public int findNumbers(int[] nums) {
         int count = 0;
-        for(int i=0; i< nums.length; i++){
-            count = (this.isEvenNumer(nums[i])) ? count + 1 : count;
+        for(int i = 0; i < nums.length; i++){
+            if(this.isEvenNumberOfDigits(nums[i])){
+                count++;
+            }
         }
-
         return count;
     }
 
-    public boolean isEvenNumer(int num){
-        int numOfDigits = 0;
+    private boolean isEvenNumberOfDigits(int num){
+        int digitCount = 0;
         while(num != 0){
-            numOfDigits++;
             num /= 10;
+            digitCount++;
         }
-        return (numOfDigits % 2 == 0)? true : false;
+
+        if(digitCount % 2 == 0){
+            return true;
+        }
+        return false;
+        
     }
 }
