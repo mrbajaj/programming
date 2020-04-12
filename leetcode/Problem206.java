@@ -1,23 +1,21 @@
 /**
- * 
+ * URL: https://leetcode.com/problems/reverse-linked-list/
  * 
  */
+class ListNode {
+    int val;
+    ListNode next;
+    ListNode(int x) { val = x; }
 
-class Problem206{
-
-    static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-
-        @Override
-        public String toString() {
-            return String.valueOf(this.val);
-        }
+    @Override
+    public String toString() {
+        return String.valueOf(this.val);
     }
+}
 
+public class Problem206{
     public static void main(String[] args) {
-        Problem206 obj = new Problem206();
+        Solution obj = new Solution();
 
 
         ListNode a = new ListNode(3);
@@ -35,6 +33,10 @@ class Problem206{
 
     }
 
+    
+}
+
+class Solution{
     public ListNode reverseList(ListNode head) {
 
         if(head == null){
