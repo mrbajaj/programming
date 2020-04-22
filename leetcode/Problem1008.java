@@ -2,52 +2,58 @@
  * URL: https://leetcode.com/problems/construct-binary-search-tree-from-preorder-traversal/
  * 
  */
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-class Problem1008 {
-
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-            left = null;
-            right = null;
-        }
+    TreeNode(int x) {
+        val = x;
+        left = null;
+        right = null;
     }
+}
 
+
+public class Problem1008 {
+
+    
     public static void main(String[] args) {
-        Problem1008 obj = new Problem1008();
+        Solution sol = new Solution();
 
 
-        TreeNode root = obj.bstFromPreorder(new int[]{8,5,1,7,10,12}) ;
-        obj.printTree(root); System.out.println();
+        TreeNode root = sol.bstFromPreorder(new int[]{8,5,1,7,10,12}) ;
+        
     }
 
+}
+
+
+class Solution {
+    
     public TreeNode bstFromPreorder(int[] preorder) {
-        return this.buildBST(preorder, 0, preorder.length - 1);
+        
+        return this.helper(preorder, 0, preorder.length -1);
     }
 
-    public TreeNode buildBST(int[] preorder, int low, int high){
-        // System.out.println("low: " + low + "\thigh: " + high);
-        if(low > high){
+    public TreeNode helper(int[] preorder, int s, int e){
+        if(s > e){
             return null;
         }
-
-        TreeNode root = new TreeNode(preorder[low]);
-
-        int breakPointIndex = low + 1;
-        while(breakPointIndex <= high && preorder[breakPointIndex] < preorder[low]){
-            breakPointIndex++;
+        if(s >= preorder.length || e >= preorder.length){
+            return null;
         }
+        // System.out.print("s " + s + "\te " + e + "\troot: " + preorder[s]);
+        TreeNode root = new TreeNode(preorder[s]);
+        
 
-        // this.printTree(root); System.out.println();
-
-        root.left = buildBST(preorder, low+1, breakPointIndex - 1 );
-        root.right = buildBST(preorder, breakPointIndex, high);
-
-
+        int mid = s+1;
+        while(mid <= e && preorder[mid] < preorder[s]){
+            mid++;
+        }
+        // System.out.println("\tmid " + mid);
+        root.left = this.helper(preorder, s+1, mid-1);
+        root.right = this.helper(preorder, mid, e);
         return root;
     }
 
