@@ -5,14 +5,13 @@
 public class Problem53 {
 
     public static void main(String[] args) {
-        Solution sol = new Solution();
+        Solution1 sol = new Solution1();
 
         System.out.println("Ans: " + sol.maxSubArray(new int[]{2,1,-3,4,-1,2,1,-5,4}));
-
     }
 }
 
-class Solution {
+class Solution1 {
     public int maxSubArray(int[] nums) {
         int n = nums.length;
         
@@ -30,6 +29,27 @@ class Solution {
         }
 
         return max;
+        
+    }
+}
+
+class Solution2 {
+    public int maxSubArray(int[] nums) {
+        int n = nums.length;
+        
+        int currMax = nums[0];
+        int finalMax = nums[0];
+
+        for(int i = 1; i < n; i++){
+            int tmp = currMax + nums[i];
+            currMax = (nums[i] > tmp) ? nums[i] : tmp;
+
+            if(currMax > finalMax){
+                finalMax = currMax;
+            }
+        }
+
+        return finalMax;
         
     }
 }
