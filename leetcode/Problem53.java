@@ -5,9 +5,11 @@
 public class Problem53 {
 
     public static void main(String[] args) {
-        Solution1 sol = new Solution1();
+        Solution1 sol1 = new Solution1();
+        System.out.println("Ans: " + sol1.maxSubArray(new int[]{2,1,-3,4,-1,2,1,-5,4}));
 
-        System.out.println("Ans: " + sol.maxSubArray(new int[]{2,1,-3,4,-1,2,1,-5,4}));
+        Solution2 sol2 = new Solution2();
+        System.out.println("Ans: " + sol2.maxSubArray(new int[]{2,1,-3,4,-1,2,1,-5,4}));
     }
 }
 
