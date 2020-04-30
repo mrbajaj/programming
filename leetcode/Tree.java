@@ -2,30 +2,30 @@
  * URL: 
  * 
  */
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+        left = null;
+        right = null;
+    }
+}
 
 class Tree {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-            left = null;
-            right = null;
-        }
-    }
-
     public static void main(String[] args) {
         Tree obj = new Tree();
+        Solution sol = new Solution();
 
         TreeNode p = new TreeNode(1);
         p.right = new TreeNode(2);
         p.right.left = new TreeNode(3);
 
         obj.printTree(p); System.out.println();
-        System.out.println("Ans: " + obj.func(p) + "\n");
+        System.out.println("Ans: " + sol.func(p) + "\n");
 
         p = new TreeNode(4);  
         p.left = new TreeNode(2);  
@@ -35,12 +35,7 @@ class Tree {
         p.right.right = new TreeNode(7);
 
         obj.printTree(p); System.out.println();
-        System.out.println("Ans: " + obj.func(p) + "\n");
-    }
-
-    public int func(TreeNode root){
-        // TODO
-        return 1;
+        System.out.println("Ans: " + sol.func(p) + "\n");
     }
 
     public void printTree(TreeNode root) {
@@ -54,4 +49,11 @@ class Tree {
         
     }
 
+}
+
+class Solution {
+    public int func(TreeNode root) {
+        //TODO
+        return -1;
+    }
 }
