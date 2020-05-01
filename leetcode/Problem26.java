@@ -8,8 +8,9 @@ import java.util.Arrays;
  */
 class Problem26{
     public static void main(String[] args) {
-        Problem26 obj = new Problem26();
+        Solution obj = new Solution();
 
+        System.out.println("Ans: " + obj.removeDuplicates(new int[]{1,1,2,2,3,3,4,4,5,5,6}));
         System.out.println("Ans: " + obj.removeDuplicates(new int[]{1,2,1}));
         System.out.println("Ans: " + obj.removeDuplicates(new int[]{1,1,2}));
         
@@ -20,23 +21,26 @@ class Problem26{
         System.out.println("Ans: " + obj.removeDuplicates(new int[]{0,0,1,1,1,2,2,3,3,4}));
     }
 
+}
+
+class Solution {
     public int removeDuplicates(int[] nums) {
         Arrays.sort(nums);
-        if(nums.length == 0){
-            return 0;
-        }
-        
-        int length = -1;
-        for(int i = 0 ; i < nums.length;){
-            int currItem = nums[i];
-            while( i < nums.length && currItem == nums[i] ){
-                i++;
+        int n = nums.length;
+        int uniqueIndex = 0;
+
+        int itr = 0;
+        while(itr < n){
+            nums[uniqueIndex] = nums[itr];
+
+            while(itr < n && nums[uniqueIndex] == nums[itr]){
+                itr++;
             }
-            length++;
-            nums[length] = currItem;
+
+            uniqueIndex++;
         }
 
-        return length+1;
-
+       System.out.println("Done:" + Arrays.toString(nums));
+       return uniqueIndex;
     }
 }
