@@ -12,6 +12,10 @@ class TreeNode {
         left = null;
         right = null;
     }
+
+    public String toString() {
+        return String.valueOf(this.val);
+    }
 }
 
 class Tree {
