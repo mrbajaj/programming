@@ -1,75 +1,76 @@
 /**
- * URL: https://leetcode.com/problems/same-tree/
+ * URL: 
  * 
  */
-class Problem100{
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-            left = null;
-            right = null;
-        }
+    TreeNode(int x) {
+        val = x;
+        left = null;
+        right = null;
     }
+
+    public String toString() {
+        return String.valueOf(this.val);
+    }
+}
+
+class Problem100 {
 
     public static void main(String[] args) {
         Problem100 obj = new Problem100();
-       
-        // Test1
+        Solution sol = new Solution();
+
         TreeNode p = new TreeNode(1);
         p.left = new TreeNode(2);
         p.right = new TreeNode(3);
+        p.left.left = new TreeNode(4);
+        p.left.right = new TreeNode(5);
+        p.right.left = new TreeNode(6);
+        p.right.right = new TreeNode(7);
+
         TreeNode q = new TreeNode(1);
         q.left = new TreeNode(2);
         q.right = new TreeNode(3);
+        q.left.left = new TreeNode(4);
+        q.left.right = new TreeNode(5);
+        q.right.left = new TreeNode(6);
+        // q.right.right = new TreeNode(7);
 
-        // Test2
-        // TreeNode p = new TreeNode(1);
-        // p = new TreeNode(4);  
-        // p.left = new TreeNode(2);  
-        // p.right = new TreeNode(9);  
-        // p.left.left = new TreeNode(3);  
-        // p.left.right = new TreeNode(8);  
-        // p.right.right = new TreeNode(7);
-        // TreeNode q = new TreeNode(1);
-        // q = new TreeNode(4);  
-        // q.left = new TreeNode(2);  
-        // q.right = new TreeNode(9);  
-        // q.left.left = new TreeNode(3);  
-        // q.left.right = new TreeNode(8);  
-        // q.right.right = new TreeNode(7);  
-        
-        
-        System.out.println("And: " + obj.isSameTree(p,q));
+        obj.printTree(p); System.out.println();
+        obj.printTree(q); System.out.println();
+        System.out.println("Ans: " + sol.isSameTree(p, q) + "\n");
     }
-    
+
+    public void printTree(TreeNode root) {
+        
+        if(root == null){
+            return;
+        }
+        printTree(root.left);
+        System.out.print(root.val + " ");
+        printTree(root.right);
+        
+    }
+
+}
+
+class Solution {
     public boolean isSameTree(TreeNode p, TreeNode q) {
-        return isSameTreeRec(p, q);
-    }
-
-    public static boolean isSameTreeRec(TreeNode p, TreeNode q) {
-        
-        if(p == null && q == null){
+        if( p == null && q == null){
             return true;
-        }
-
-        if(p == null || q == null){
+        }if(p == null || q == null){
             return false;
         }
 
-        if(p.val != q.val){
-            return false;
-        }
-
-        if(isSameTreeRec(p.left, q.left) && isSameTreeRec(p.right, q.right)){
-            return true;
+        if(p.val == q.val){
+            return isSameTree(p.left, q.left) && isSameTree(p.right, q.right);
         }else{
             return false;
         }
+        
     }
-
 }
