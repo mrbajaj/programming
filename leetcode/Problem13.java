@@ -9,49 +9,71 @@ import java.util.Map;
 class Problem13{
     public static void main(String[] args) {
         
-        System.out.println("Ans: " + romanToInt("CDXCIX")); // 499
+        Solution2 sol = new Solution2();
 
-        System.out.println("Ans: " + romanToInt("CCCXCI")); // 391
+        System.out.println("Ans: " + sol.romanToInt("CDXCIX")); // 499
 
-        System.out.println("Ans: " + romanToInt("I")); // 1
+        System.out.println("Ans: " + sol.romanToInt("CCCXCI")); // 391
 
-        System.out.println("Ans: " + romanToInt("V")); // 5
+        System.out.println("Ans: " + sol.romanToInt("I")); // 1
 
-        System.out.println("Ans: " + romanToInt("IV")); // 4
+        System.out.println("Ans: " + sol.romanToInt("V")); // 5
+
+        System.out.println("Ans: " + sol.romanToInt("IV")); // 4
     }
 
-    public static int romanToInt(String s) {
-        int ans = 0;
-        Map<String, Integer> map = new HashMap<String, Integer>(){{
-            put("I",1); put("II", 2); put("III", 3); put("IV", 4);
-            put("V", 5); put("VI", 6); put("VII", 7); put("VIII", 8); put("IX", 9); 
-            put("X",10); put("XX", 20); put("XXX", 30); put("XL", 40);
-            put("L", 50); put("LX", 60); put("LXX", 70); put("LXXX", 80); put("XC", 90);
-            put("C",100); put("CC", 200); put("CCC", 300); put("CD", 400);
-            put("D", 500); put("DC", 600); put("DCC", 700); put("DCCC", 800); put("CM", 900);
-            put("M", 1000); put("MM", 2000); put("MMM", 3000);
-        }};
+}
 
-        String key;
-        int start = 0;
-        int end = s.length();
-        while(start <= end){
-            key = s.substring(start, end);
-            System.out.print("key =" + key + "(" + map.get(key) +  ") || start =" + start + " end =" + end);
-            if(map.containsKey(key) ){
-                System.out.println("\tFound");
-                ans += map.get(key);
-                start = end;
-                end = s.length();
+class Solution {
+    public int romanToInt(String s) {
+        int num = 0;
+        int len = s.length();
+
+
+        Map<String, Integer> map = new HashMap<>();
+        map.put("I", 1);    map.put("IV", 4);   map.put("V", 5);    map.put("IX", 9); 
+        map.put("X", 10);   map.put("XL", 40);  map.put("L", 50);   map.put("XC", 90); 
+        map.put("C", 100);  map.put("CD", 400); map.put("D", 500);  map.put("CM", 900); 
+        map.put("M", 1000);
+
+        for(int i = 0; i < len;){
+            String oneChar = Character.toString((s.charAt(i)) );;
+            String twoChar = null;
+            if( i < len-1 ){
+                twoChar = Character.toString( (s.charAt(i)) ) + Character.toString((s.charAt(i+1)) ) ;
+            }
+
+            if(twoChar != null && map.containsKey(twoChar)){
+                num += map.get(twoChar);
+                i+=2;
             }else{
-                System.out.println("\tNotFound");
-                end--;
+                num+= map.get(oneChar);
+                i++;
             }
         }
 
-        System.out.println();
-        return ans;
+        return num;
         
     }
+}
 
+
+class Solution2 {
+
+    public int romanToInt(String s) {
+        int previous = 0, current = 0, ans = 0;
+        for (int i = s.length() - 1 ; i >= 0 ; i--){
+            if (s.charAt(i) == 'I') current = 1;
+            else if (s.charAt(i) == 'V') current = 5;
+            else if (s.charAt(i) == 'X') current = 10;
+            else if (s.charAt(i) == 'L') current = 50;
+            else if (s.charAt(i) == 'C') current = 100;
+            else if (s.charAt(i) == 'D') current = 500;
+            else if (s.charAt(i) == 'M') current = 1000;
+            if (previous > current) ans -= current;
+            else ans += current;
+            previous = current;
+        }
+        return ans;
+    }
 }
