@@ -3,20 +3,7 @@
  * 
  */
 
-class LinkedList{
-    static class ListNode{
-        Integer val;
-        ListNode next;
-        ListNode(int v){
-            this.val = v;
-            this.next = null;
-        }
-        @Override
-        public String toString() {
-            return String.valueOf(this.val);
-        }
-    }
-
+public class LinkedList{
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
 
@@ -33,14 +20,13 @@ class LinkedList{
         obj.printList(a);
         obj.printList(b);
 
-        System.out.println("Ans:" + obj.func(a, b)  + "\n");
-        
-    }
+        Solution sol = new Solution();
 
-    public int func(ListNode a, ListNode b){
-        
-        return 1;
+        System.out.println("Ans:" + sol.func(a)  + "\n");
+        System.out.println("Ans:" + sol.func(b)  + "\n");
 
+
+        
     }
 
     public void printList(ListNode head){
@@ -63,4 +49,23 @@ class LinkedList{
         
     }
 
+}
+
+class Solution {
+    public int func(ListNode head) {
+        return 1;
+    }
+}
+
+class ListNode{
+    Integer val;
+    ListNode next;
+    ListNode(int v){
+        this.val = v;
+        this.next = null;
+    }
+    @Override
+    public String toString() {
+        return String.valueOf(this.val);
+    }
 }
