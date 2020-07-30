@@ -5,20 +5,9 @@
 
 class Problem700 {
 
-    public static class TreeNode {
-        int val;
-        TreeNode left;
-        TreeNode right;
-
-        TreeNode(int x) {
-            val = x;
-            left = null;
-            right = null;
-        }
-    }
-
     public static void main(String[] args) {
         Problem700 obj = new Problem700();
+        Solution sol = new Solution();
 
         TreeNode p = new TreeNode(20);
         p.left = new TreeNode(10);
@@ -48,32 +37,17 @@ class Problem700 {
 
 
         System.out.println("Searching Nodes and printing their subtrees");
-        TreeNode s = obj.searchBST(p, 32); System.out.print("Search 32::\t");
+        TreeNode s = sol.searchBST(p, 32); System.out.print("Search 32::\t");
         obj.printTree(s); System.out.println();
 
-        s = obj.searchBST(p, 7); System.out.print("Search 7::\t");
+        s = sol.searchBST(p, 7); System.out.print("Search 7::\t");
         obj.printTree(s); System.out.println();
 
-        s = obj.searchBST(p, 20); System.out.print("Search 20::\t");
+        s = sol.searchBST(p, 20); System.out.print("Search 20::\t");
         obj.printTree(s); System.out.println();
         
 
 
-        
-    }
-
-    public TreeNode searchBST(TreeNode root, int val) {
-        if(root == null){
-            return null;
-        }
-
-        if(root.val == val){
-            return root;
-        }else if(root.val < val){
-            return searchBST(root.right, val);
-        }else{
-            return searchBST(root.left, val);
-        }
         
     }
 
@@ -103,4 +77,34 @@ class Problem700 {
         
     }
 
+}
+
+
+
+class Solution {
+    public TreeNode searchBST(TreeNode root, int val) {
+        if(root == null){
+            return null;
+        }
+        
+        if(root.val == val){
+            return root;
+        }else if(root.val > val){
+            return searchBST(root.left, val);
+        }else{
+            return searchBST(root.right, val);
+        }
+    }
+}
+
+class TreeNode {
+    int val;
+    TreeNode left;
+    TreeNode right;
+
+    TreeNode(int x) {
+        val = x;
+        left = null;
+        right = null;
+    }
 }
