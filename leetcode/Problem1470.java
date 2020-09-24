@@ -1,6 +1,6 @@
 /**
  * URL: https://leetcode.com/problems/shuffle-the-array/submissions/
- * 
+ * Sept2020 Session
  */
 
 import java.util.Arrays;
@@ -18,14 +18,17 @@ public class Problem1470 {
 
 class Solution {
     public int[] shuffle(int[] nums, int n) {
-        int[] res = new int[2*n];
-        for(int i = 0, j = n, k = 0;k < 2*n;){
-            res[k] = nums[i];
-            i++; k++;
-            res[k] = nums[j];
-            j++; k++;
+        int ans[] = new int[2*n];
+        int i = 0, j = n;
+        for(int k=0; k < 2*n; k++){
+            if(k%2 == 0){
+                ans[k] = nums[i];
+                i++;
+            }else{
+                ans[k] = nums[j];
+                j++;
+            }
         }
-        
-        return res;
+        return ans;
     }
 }
