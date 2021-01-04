@@ -18,6 +18,7 @@ public class Problem7{
         System.out.println("Value: 0 => Ans: " + sol.reverse(0));
         System.out.println("Value: 1534236469 => Ans: " + sol.reverse(1534236469));
         System.out.println("Value: -2147483648 => Ans: " + sol.reverse(-2147483648));
+        System.out.println("Value: 502 => Ans: " + sol.reverse(502));
     }
 }
 
