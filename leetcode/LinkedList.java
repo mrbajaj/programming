@@ -1,32 +1,28 @@
 /**
+ * URL: 
+ * Tags: LinkedList
  * 
- * 
+ * Best Time Complexity:
+ * Best Space Complexity:
  */
 
 public class LinkedList{
     public static void main(String[] args) {
         LinkedList obj = new LinkedList();
+        Solution sol = new Solution();
 
         ListNode a = new ListNode(3);
         a.next = new ListNode(7);
         a.next.next = new ListNode(8);
         a.next.next.next = new ListNode(10);
 
-        ListNode b = new ListNode(99);
-        b.next = new ListNode(1);
-        b.next.next = new ListNode(4);
-        b.next.next.next = a.next.next;
-
-        obj.printList(a);
-        obj.printList(b);
-
-        Solution sol = new Solution();
-
-        System.out.println("Ans:" + sol.func(a)  + "\n");
-        System.out.println("Ans:" + sol.func(b)  + "\n");
-
-
+        System.out.print("Given:\t"); obj.printList(a);
         
+        ListNode ans = sol.func(a);
+        System.out.print("Answer:\t"); obj.printList( ans );
+        System.out.print("\n\n"); 
+        
+
     }
 
     public void printList(ListNode head){
@@ -52,8 +48,8 @@ public class LinkedList{
 }
 
 class Solution {
-    public int func(ListNode head) {
-        return 1;
+    public ListNode func(ListNode head) {
+        return head;
     }
 }
 
