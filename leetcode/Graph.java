@@ -1,6 +1,6 @@
 /**
  * URL: 
- * Tags: LinkedList
+ * Tags: Graph
  * 
  * Best Time Complexity:
  * Best Space Complexity:
