@@ -476,3 +476,7 @@
 | BitManipulation-8      | [Divide two integers without using multiplication, division and mod operator](https://www.geeksforgeeks.org/divide-two-integers-without-using-multiplication-division-mod-operator/)                                                                                                                               |       |                    |
 | BitManipulation-9      | [Calculate square of a number without using \*, / and pow()](https://www.geeksforgeeks.org/calculate-square-of-a-number-without-using-and-pow/#:~:text=Given%20an%20integer%20n%2C%20calculate,*%2C%20%2F%20and%20pow().&text=A%20Simple%20Solution%20is%20to%20repeatedly%20add%20n%20to%20result.)               |       |                    |
 | BitManipulation-10     | [Power Set](https://practice.geeksforgeeks.org/problems/power-set4302/1)                                                                                                                                                                                                                                           |       |
+
+
+
+Credits: Love Babbar (https://www.youtube.com/watch?v=4iFALQ1ACdA)
