@@ -26,16 +26,21 @@ public class Heap1{
         // int[] heap = sol.createMaxHeap();
         int[] arr = new int[]{1,2,3,4,5,6,7,8,9,10};
         int[] heap = sol.createMaxHeapFromArray(arr);
-        System.out.println(Arrays.toString(arr) + "\t=> heap: " + Arrays.toString(heap));
+        System.out.println(Arrays.toString(arr) + "\n\theap: " + Arrays.toString(heap));
+        sol.heapSort(heap);
+        System.out.println();
 
         arr = new int[]{4, 10, 3, 5, 1};
         heap = sol.createMaxHeapFromArray(arr);
-        System.out.println(Arrays.toString(arr) + "\t=> heap: " + Arrays.toString(heap));
-
+        System.out.println(Arrays.toString(arr) + "\n\theap: " + Arrays.toString(heap));
+        sol.heapSort(heap);
+        System.out.println();
 
         arr = new int[]{1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
         heap = sol.createMaxHeapFromArray(arr);
-        System.out.println(Arrays.toString(arr) + "\t=> heap: " + Arrays.toString(heap));
+        System.out.println(Arrays.toString(arr) + "\n\theap: " + Arrays.toString(heap));
+        sol.heapSort(heap);
+        System.out.println();
 
     }
 
@@ -78,15 +83,64 @@ class Solution{
         return heap;
     }
 
-    public void sort(int[] heap){
+    /**
+     * delete top element : print 
+     * move last element at first place 
+     * heapify
+     * 
+     * Note: keep track of remining elements in heap
+     */
+    public void heapSort(int[] heap){
+        int N = heap.length;
+        int lastIndex = heap.length - 1;
 
-        //delete top element : print 
-        //move last element at first place 
-        //heapify
-        // Note: keep track of remining elements in heap
 
-        
+        for(int i = 0; i < N; i++){
+            // System.out.print(heap[0] + " ");
+            int tmp = heap[0];
+            heap[0] = heap[lastIndex];
+            heap[lastIndex] = tmp;
+
+            //Heapify: Traverse Downward using childrens to place first element at appropriate position
+            int currIndex = 0;
+            while(true){
+                int leftIndex = 2 * currIndex + 1;
+                int rightIndex = 2 * currIndex + 2;
+                // System.out.print("leftIndex:" + leftIndex + "\t rightIndex:" + rightIndex);
+
+                int max = heap[currIndex];
+                int maxIndex = currIndex;
+
+                //check max with left
+                if(leftIndex < lastIndex && max < heap[leftIndex]){
+                    max = heap[leftIndex];
+                    maxIndex = leftIndex;
+                }
+                //check max with right
+                if(rightIndex < lastIndex && max < heap[rightIndex]){
+                    max = heap[rightIndex];
+                    maxIndex = rightIndex;
+                }
+
+                if(maxIndex == currIndex){
+                    // System.out.println("\tBreaked");
+                    break;
+                }
+
+                heap[maxIndex] = heap[currIndex];
+                heap[currIndex] = max;
+                currIndex = maxIndex;
+
+                // System.out.println("\tHeap: " + Arrays.toString(heap));
+            }
 
 
+            lastIndex--;
+        }
+        // System.out.println();
+
+        System.out.print("\tSorted: " + Arrays.toString(heap) + "\n");
     }
+
+    
 }
