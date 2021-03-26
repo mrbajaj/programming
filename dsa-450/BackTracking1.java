@@ -1,5 +1,5 @@
 /**
- * URL: https://leetcode.com/problems/search-in-a-binary-search-tree/
+ * URL: https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1#
  * Tags: Tree
  * 
  * Best Time Complexity:
