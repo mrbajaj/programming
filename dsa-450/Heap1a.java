@@ -18,7 +18,7 @@
 
 import java.util.Arrays;
 
-public class Heap1{
+public class Heap1a{
 
     public static void main(String[] args) {
         Solution sol = new Solution();
