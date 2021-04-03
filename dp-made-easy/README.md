@@ -566,8 +566,8 @@ Just 4 more lines of code....and 💥💥💥 now your code is Memoised. :heart:
 #### Those Who Cannot Remember the Past are Condemned to Repeat It :laughing: :laughing: ~ Dynamic Programming :dizzy:
 
 Roll The Credits:
-* [Aditya Verma] (https://www.youtube.com/channel/UC5WO7o71wvxMxEtLRkPhiQQ)
-* [Dhruv Kothari] (https://github.com/kothariji/)
+* [Aditya Verma](https://www.youtube.com/channel/UC5WO7o71wvxMxEtLRkPhiQQ)
+* [Dhruv Kothari](https://github.com/kothariji/)
 ---
 
 
