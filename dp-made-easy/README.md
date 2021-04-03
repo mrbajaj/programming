@@ -10,7 +10,7 @@ Simply cached Recursion (Memoization) or in other words enhanced recursion.
 ```
 ##### _The main idea behind DP is to store the results of subproblems so that we can simply use the results of these subproblems without re-computing them when needed in the future. This idealogy saves a lot of time and makes the solution optimized._
 ---
-## Day - 1 :blue_book:
+## DP-1 :blue_book:
 ### Knapsack Problem: :pushpin::pushpin:
 _In this problem we are given an empty bag with its maximum weight holding capacity. Also, we are given a list of items with there weight and profit values. We need to find out the maximum profit we can earn._
 #### Type of Knapsack Problems
@@ -29,7 +29,7 @@ _In this problem we are given an empty bag with its maximum weight holding capac
 #### It all started with Day-1 :fire::fire:
 ---
 
-## Day - 2 :green_book:
+## DP-2 :green_book:
 ### Memoization: Top - Down Approach :pushpin::pushpin:
 _It is an **optimization technique** used to cache the results of subproblems so that we can use that results later on if required. **Memoization** ensures that a method doesn't run for the inputs whose results are previously calculated._
 
@@ -60,7 +60,7 @@ But when the performance is measured at() function is 3.1 times faster then subs
 <b> This costed me 29 submissions :persevere: :laughing:</b>
 
 ---
-## Day - 3 :ledger:
+## DP-3 :ledger:
 ### 1.  Tabulation:  Bottom-Up Approach :pushpin::pushpin:
 _It is one of the most preferable methods in dynamic programming. It is faster than the **memoization** method as it doesn't involve any recursive calls. In this method, we have an array/matrix and we start from the first cell and move down filling entries in each cell one by one._
 #### 2-Steps to create dp matrix. 
@@ -98,7 +98,7 @@ we might get stack overflow on doing various recursive calls for large data.
 
 #### Though it's a rare condition. :sweat_smile::sweat_smile:
 ---
-## Day - 4 :closed_book:
+## DP-4 :closed_book:
 ### Solved: Subset Sum Problem :pushpin::pushpin:
 _It is a variation of the knapsack problem in which we are given an array of non-negative integers and a **required sum**. We need to find out that is it possible to create a subset of that array so that sum of elements of the subset equals the **required sum**._
 
@@ -118,7 +118,7 @@ _It is a variation of the knapsack problem in which we are given an array of non
 #### Finally DP started showing it's colors. :yellow_heart::blue_heart::purple_heart::green_heart::heart:
 
 ---
-## Day - 5 :notebook:
+## DP-5 :notebook:
 ### Solved: Count of Subsets with Required Sum :pushpin::pushpin:
 _It is a slight variation of the *Subset Sum Problem* in which we are given an array of non-negative integers and a **required sum**. We need to find out the count of the total number of subsets of the given array whose sum equals the **required sum**._
 
@@ -134,7 +134,7 @@ _It is a slight variation of the *Subset Sum Problem* in which we are given an a
 #### :walking: “I walk slowly, but never backwards.” :walking: - — Abraham Lincoln :pray: :pray:
 
 ---
-## Day - 6  :orange_book:
+## DP-6  :orange_book:
 ### Solved: Minimum Sum Partition Problem :pushpin::pushpin:
 _Again its a variation of the **Subset Sum Problem**. The problem statement states that we are given an array with non-negative integers and our task is to divide the elements of that array into two subsets such that the absolute difference between their sums is **minimum.**_
 
@@ -150,7 +150,7 @@ _Again its a variation of the **Subset Sum Problem**. The problem statement stat
 
 
 ---
-## Day - 7  :blue_book:
+## DP-7  :blue_book:
 ### Solved: Count of Subsets with required difference :pushpin::pushpin:
 _This is a variation of **Minimum Sum Partition Problem interesting problem**. In this, we are given an array with non-negative integers and our task is to divide the elements of that array into two subsets such that the absolute difference between their sums equals  **required difference.**_
 
@@ -183,7 +183,7 @@ _This is a variation of **Minimum Sum Partition Problem interesting problem**. I
   ##### 🎥Tutorial Link -  https://www.youtube.com/watch?v=_gPcYovP7wc&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=12
 ####  :yellow_heart:  7-Days Streak. :blue_heart: 7-Days of CP.  :purple_heart: 7-Days of DP :green_heart: 7-Days of OP :heart:
 ---
-## Day - 8  :green_book:
+## DP-8  :green_book:
 ### Solved: Unbounded Knapsack:pushpin::pushpin:
 _**Unbounded Knapsack Problems** are slightly different from **0/1 Knapsack Problems**. In this, we can include the same item multiple numbers of times inside the knapsack and our aim is to just maximize the profit._ 
 ##### We just need to change one condition:
@@ -212,7 +212,7 @@ dp[i][j] = max((value[i-1] + dp[i][j-weight[i-1]]), dp[i-1][j]);
 ####  Visited HackerRank after so Long ! Nostalgic :dizzy: :smile:
 ---
 
-## Day - 9  :ledger:
+## DP-9  :ledger:
 ### Solved: Rod Cutting Problem:pushpin::pushpin:
 _**Problem Statement:** Given a rod of length **n** and an array of prices that contains prices of all pieces of size ranging from **1 to  n**. Determine the maximum value obtainable by cutting up the rod and selling the pieces._ 
 
@@ -230,7 +230,7 @@ _**Problem Statement:** Given a rod of length **n** and an array of prices that 
   
 ####  Set Goals.  :star2:  Say Prayers. :pray:  Work Hard. :muscle:
 ---
-## Day - 10  :closed_book:
+## DP-10  :closed_book:
 ### Solved: Coin Change Problem:moneybag: :moneybag:
 _**Problem Statement:** You are given a value N and array of coins. You need to find out the number of ways in which you can get value N from that coins. There is infinite supply of coins.(Unbounded Knapsack :wink:)_ 
 
@@ -252,7 +252,7 @@ _**Problem Statement:** You are given a value N and array of coins. You need to 
 
 
 ---
-## Day - 11  :notebook:
+## DP-11  :notebook:
 ### Solved: Maximize The Cut Segments Problem :pushpin: :pushpin:
  _**Problem Statement:** Given an integer **N** denoting the Length of a line segment. you need to cut the line segment in such a way that the cut length of a line segment each time is integer either **x**, **y**, or **z**. and after performing all cutting operations the total number of cut segments must be maximum._ 
 
@@ -282,7 +282,7 @@ for(int i =1; i<amount+1;i++)
 #### Finally, struggled for 3 days to solve Maximize The Cut Segments  :relieved: :relieved:
 ---
 
-## Day - 12  :orange_book:
+## DP-12  :orange_book:
 ### Longest Common Subsequence :pushpin: :pushpin:
  _**Problem Statement:** Given two strings  **s1** and **s2**, find the length of the longest subsequence present in both of them. A subsequence is a sequence that appears in the same relative order, but not necessarily contiguous._ 
 
@@ -294,7 +294,7 @@ The longest common subsequence problem is a classic computer science problem, th
 #### Believe me! You are awesome! :blush:
 ---
 
-## Day - 13  :blue_book:
+## DP-13  :blue_book:
 ### Solved: # Longest common subsequence Memoization :pushpin: :pushpin:
 Did the LCS problem using the Bottom-up approach(Memoisation). 
 
@@ -311,7 +311,7 @@ Did the LCS problem using the Bottom-up approach(Memoisation).
 
 ---
 
-## Day - 14  :green_book:
+## DP-14  :green_book:
 ### Solved: # Longest common subsequence Tabulation :pushpin: :pushpin:
 Did the LCS problem using the Top-Down approach(Tabulation ). 
 
@@ -328,7 +328,7 @@ Did the LCS problem using the Top-Down approach(Tabulation ).
 
 ---
 
-## Day - 15  :ledger:
+## DP-15  :ledger:
 ### Solved:  Longest Common Substring :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **s1** and **s2**. The task is to find the length of the **longest common substring.**_ 
@@ -349,7 +349,7 @@ _**Problem Statement:** Given two strings **s1** and **s2**. The task is to find
   
 #### Let the streak going. Don't give a `<br />` :laughing: :laughing:
 ---
-## Day - 16 :closed_book:
+## DP-16 :closed_book:
 ### Solved:  Printing LCS :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings  **s1** and **s2**, print the longest subsequence present in both of them._ 
@@ -388,7 +388,7 @@ output => cing
 #### I'd Rate My Programming Puns C++ :smirk: :smirk:
 
 ---
-## Day - 17 :notebook:
+## DP-17 :notebook:
 ### Solved:  Shortest Common Supersequence :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **str1** and **str2**, find the length of the smallest string which has both, **str1** and **str2** as its sub-sequences._ 
@@ -406,7 +406,7 @@ _**Problem Statement:** Given two strings **str1** and **str2**, find the length
 
 
 ---
-## Day - 18 :orange_book:
+## DP-18 :orange_book:
 ### Solved:  Minimum Number of Deletions and Insertions :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **str1** and **str2**. Your task is to convert **str1** to **str2**. You can only perform two types of operations that are **remove** or **insert**. Find the minimum number of operations required to convert **str1**  into **str2**._ 
@@ -443,7 +443,7 @@ _**Problem Statement:** Given a string **str1**. Your task is to find the Longes
 #### Be Different.  Be Awesome. :wink: :dizzy: 
 
 ---
-## Day - 20 :green_book:
+## DP-20 :green_book:
 ### Solved: Minimum Deletions to make string Palindromic :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string of **s1**. Your task is to remove or delete minimum number of characters from the string so that the resultant string is palindrome._ 
@@ -460,7 +460,7 @@ _**Problem Statement:** Given a string of **s1**. Your task is to remove or dele
 #### Stay Patient. Trust your journey. :relieved: :round_pushpin: 
 
 ---
-## Day - 21 :ledger:
+## DP-21 :ledger:
 ### Solved: Printing Shortest Common Supersequence :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **str1** and **str2**, print the smallest string which has both, **str1** and **str2** as its sub-sequences._ 
@@ -477,7 +477,7 @@ _**Problem Statement:** Given two strings **str1** and **str2**, print the small
 #### :yellow_heart:  21-Days Streak. :blue_heart: 21-Days of CP.  :purple_heart: 21-Days of DP :green_heart: 21-Days of OP :heart:
 
 ---
-## Day - 22 :closed_book:
+## DP-22 :closed_book:
 ### Solved: Longest Repeating Subsequence :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string  **s**, find the length of the longest repeating SubSequence such that the two subsequences don’t have the same string character in the same position, i.e., any i’th character in the two subsequences shouldn’t have the same index in the original string._ 
@@ -493,7 +493,7 @@ _**Problem Statement:** Given a string  **s**, find the length of the longest re
 #### Hey ! We are still at Day-0!  :relieved: :relieved:
 
 ---
-## Day - 23  :notebook:
+## DP-23  :notebook:
 ### Solved: Is Subsequence ? :pushpin: :pushpin:
  _**Problem Statement:** Given two strings **str1** and  **str2**, check if **str1** is subsequence of **str2**.._ 
 
@@ -517,7 +517,7 @@ else
 #### LIVE :dizzy:  LAUGH :laughing: CODE :computer:
 
 ---
-## Day - 24 :orange_book:
+## DP-24 :orange_book:
 ### Solved: Minimum Insertion Steps to Make a String Palindrome :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string  **s**, find the minimum number of insertion operations you could perform on the string to make the string palindromic._ 
@@ -535,7 +535,7 @@ _**Problem Statement:** Given a string  **s**, find the minimum number of insert
 
 ---
 
-## Day - 25 :blue_book:
+## DP-25 :blue_book:
 ### Solved: Matrix Chain Multiplication (Recursive):pushpin: :pushpin:
 
 _**Problem Statement:** Given an array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i]. We need to write a function that should return the minimum number of multiplications needed to multiply the chain._ 
@@ -551,7 +551,7 @@ In this approach, we can place parenthesis at all possible places and then calcu
 
 ---
 
-## Day - 26:green_book:
+## DP-26:green_book:
 ### Solved: Matrix Chain Multiplication (Memoisation):pushpin: :pushpin:
 
 _**Problem Statement:** Given an array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i]. We need to write a function that should return the minimum number of multiplications needed to multiply the chain._ 
@@ -565,6 +565,11 @@ Just 4 more lines of code....and 💥💥💥 now your code is Memoised. :heart:
   
 #### Those Who Cannot Remember the Past are Condemned to Repeat It :laughing: :laughing: ~ Dynamic Programming :dizzy:
 
+---
+
+# Roll The Credits:
+* [Aditya Verma - Youtube](https://www.youtube.com/channel/UC5WO7o71wvxMxEtLRkPhiQQ)
+* [Dhruv Kothari - GithubRepo](https://github.com/kothariji/Dynamic_Programming_Journey)
 ---
 
 
