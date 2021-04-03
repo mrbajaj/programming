@@ -567,7 +567,7 @@ Just 4 more lines of code....and 💥💥💥 now your code is Memoised. :heart:
 
 Roll The Credits:
 * [Aditya Verma](https://www.youtube.com/channel/UC5WO7o71wvxMxEtLRkPhiQQ)
-* [Dhruv Kothari](https://github.com/kothariji/)
+* [Dhruv Kothari](https://github.com/kothariji/Dynamic_Programming_Journey)
 ---
 
 
