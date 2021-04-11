@@ -11,10 +11,12 @@ public class LinkedList{
         LinkedList obj = new LinkedList();
         Solution sol = new Solution();
 
-        ListNode a = new ListNode(3);
-        a.next = new ListNode(7);
-        a.next.next = new ListNode(8);
-        a.next.next.next = new ListNode(10);
+        ListNode a = new ListNode(1);
+        a.next = new ListNode(2);
+        a.next.next = new ListNode(3);
+        a.next.next.next = new ListNode(4);
+        a.next.next.next.next = new ListNode(5);
+        a.next.next.next.next.next = new ListNode(6);
 
         System.out.print("Given:\t"); obj.printList(a);
         
