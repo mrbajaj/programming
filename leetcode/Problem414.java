@@ -50,7 +50,7 @@ class Solution {
         
         System.out.println(max + " " + secondMax + " " + thirdMax);
 
-        if(thirdMax != 0){
+        if(thirdMax != Long.MIN_VALUE){
             return (int)thirdMax;
         }
         return (int)max;
