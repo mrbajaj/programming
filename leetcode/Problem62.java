@@ -57,12 +57,5 @@ class SolutionDP {
 
         return dp[m-1][n-1];
     }
-    
-    
-    private boolean isValid(int m, int n, int i, int j){
-        if(i >= 0 && j >= 0 && i < m && j < n){
-            return true;
-        }
-        return false;
-    }
+
 }
