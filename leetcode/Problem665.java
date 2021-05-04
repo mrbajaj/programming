@@ -22,17 +22,21 @@ class Solution {
     public boolean checkPossibility(int[] nums) {
         boolean used = false;
 
-        for(int i = 1; i < nums.length; i++){
-            if(nums[i-1] > nums[i]){
-                if(used){ return false; }
-                if (i - 2 < 0 || nums[i - 2] <= nums[i]){
-                    nums[i - 1] = nums[i]; // decrease nums[i - 1]
-                } else {
-                    nums[i] = nums[i - 1]; // increase nums[i]
+        public boolean checkPossibility(int[] nums) {
+            boolean used = false;
+    
+            for(int i = 1; i < nums.length; i++){
+                if(nums[i-1] > nums[i]){
+                    if(used){ return false; }
+                    if (i - 2 < 0 || nums[i - 2] <= nums[i]){
+                        nums[i - 1] = nums[i]; // decrease nums[i - 1]
+                    } else {
+                        nums[i] = nums[i - 1]; // increase nums[i]
+                    }
+                    used = true;
                 }
-                used = true;
             }
+            return true;
         }
-        return true;
     }
 }
