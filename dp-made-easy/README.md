@@ -48,16 +48,11 @@ If in recursive function:
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[0 - 1 Knapsack Problem](https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem/0) | [View Solution](./DAY-02/0-1_Knapsack_Problem_(GEEKSFORGEEKS).cpp) | Easy |||
-<pre>
-<b>Important Tip</b> -  std::vector's at() function is similar to subscript operator [ ].
-But when the performance is measured at() function is 3.1 times faster then subscript operator [ ]. 
-</pre>
+ GEEKSFORGEEKS |[0 - 1 Knapsack Problem](https://practice.geeksforgeeks.org/problems/0-1-knapsack-problem/0) | [TODO]() | Easy |||
 
 ##### 🎥Tutorial Link - https://www.youtube.com/watch?v=kvyShbFVaY8&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=3
 ##### 🎥Tutorial Link -  https://www.youtube.com/watch?v=fJbIuhs24zQ&list=PL_z_8CaSLPWekqhdCPmFohncHwz8TY2Go&index=4
 
-<b> This costed me 29 submissions :persevere: :laughing:</b>
 
 ---
 ## DP-3 :ledger:
@@ -99,7 +94,7 @@ we might get stack overflow on doing various recursive calls for large data.
 #### Though it's a rare condition. :sweat_smile::sweat_smile:
 ---
 ## DP-4 :closed_book:
-### Solved: Subset Sum Problem :pushpin::pushpin:
+### Subset Sum Problem :pushpin::pushpin:
 _It is a variation of the knapsack problem in which we are given an array of non-negative integers and a **required sum**. We need to find out that is it possible to create a subset of that array so that sum of elements of the subset equals the **required sum**._
 
 ```diff
@@ -119,7 +114,7 @@ _It is a variation of the knapsack problem in which we are given an array of non
 
 ---
 ## DP-5 :notebook:
-### Solved: Count of Subsets with Required Sum :pushpin::pushpin:
+### Count of Subsets with Required Sum :pushpin::pushpin:
 _It is a slight variation of the *Subset Sum Problem* in which we are given an array of non-negative integers and a **required sum**. We need to find out the count of the total number of subsets of the given array whose sum equals the **required sum**._
 
 ```diff
@@ -135,7 +130,7 @@ _It is a slight variation of the *Subset Sum Problem* in which we are given an a
 
 ---
 ## DP-6  :orange_book:
-### Solved: Minimum Sum Partition Problem :pushpin::pushpin:
+### Minimum Sum Partition Problem :pushpin::pushpin:
 _Again its a variation of the **Subset Sum Problem**. The problem statement states that we are given an array with non-negative integers and our task is to divide the elements of that array into two subsets such that the absolute difference between their sums is **minimum.**_
 
 ```diff
@@ -151,7 +146,7 @@ _Again its a variation of the **Subset Sum Problem**. The problem statement stat
 
 ---
 ## DP-7  :blue_book:
-### Solved: Count of Subsets with required difference :pushpin::pushpin:
+### Count of Subsets with required difference :pushpin::pushpin:
 _This is a variation of **Minimum Sum Partition Problem interesting problem**. In this, we are given an array with non-negative integers and our task is to divide the elements of that array into two subsets such that the absolute difference between their sums equals  **required difference.**_
 
 ##### Two equations to solve the problem are:
@@ -201,8 +196,8 @@ dp[i][j] = max((value[i-1] + dp[i][j-weight[i-1]]), dp[i-1][j]);
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- HACKERRANK |[Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack/problem) | [View Solution](./DAY-08/Knapsack(HACKERRANK).cpp) | Medium |||
-  GEEKSFORGEEKS |[Knapsack with Duplicate Items](https://practice.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1) | [View Solution](./DAY-08/Knapsack_with_Duplicate_Items(GEEKSFORGEEKS).cpp) | Medium |||
+ HACKERRANK |[Knapsack](https://www.hackerrank.com/challenges/unbounded-knapsack/problem) | [TODO]() | Medium |||
+  GEEKSFORGEEKS |[Knapsack with Duplicate Items](https://practice.geeksforgeeks.org/problems/knapsack-with-duplicate-items4201/1) | [TODO]() | Medium |||
 ```diff
 @@ solved Unbounded Knapsack Problem @@
 ```
@@ -213,7 +208,7 @@ dp[i][j] = max((value[i-1] + dp[i][j-weight[i-1]]), dp[i-1][j]);
 ---
 
 ## DP-9  :ledger:
-### Solved: Rod Cutting Problem:pushpin::pushpin:
+### Rod Cutting Problem:pushpin::pushpin:
 _**Problem Statement:** Given a rod of length **n** and an array of prices that contains prices of all pieces of size ranging from **1 to  n**. Determine the maximum value obtainable by cutting up the rod and selling the pieces._ 
 
 ### Problem solved
@@ -253,7 +248,7 @@ _**Problem Statement:** You are given a value N and array of coins. You need to 
 
 ---
 ## DP-11  :notebook:
-### Solved: Maximize The Cut Segments Problem :pushpin: :pushpin:
+### Maximize The Cut Segments Problem :pushpin: :pushpin:
  _**Problem Statement:** Given an integer **N** denoting the Length of a line segment. you need to cut the line segment in such a way that the cut length of a line segment each time is integer either **x**, **y**, or **z**. and after performing all cutting operations the total number of cut segments must be maximum._ 
 
 ```diff
@@ -295,7 +290,7 @@ The longest common subsequence problem is a classic computer science problem, th
 ---
 
 ## DP-13  :blue_book:
-### Solved: # Longest common subsequence Memoization :pushpin: :pushpin:
+### Longest common subsequence Memoization :pushpin: :pushpin:
 Did the LCS problem using the Bottom-up approach(Memoisation). 
 
 ```diff
@@ -312,7 +307,7 @@ Did the LCS problem using the Bottom-up approach(Memoisation).
 ---
 
 ## DP-14  :green_book:
-### Solved: # Longest common subsequence Tabulation :pushpin: :pushpin:
+### Longest common subsequence Tabulation :pushpin: :pushpin:
 Did the LCS problem using the Top-Down approach(Tabulation ). 
 
 ```diff
@@ -329,7 +324,7 @@ Did the LCS problem using the Top-Down approach(Tabulation ).
 ---
 
 ## DP-15  :ledger:
-### Solved:  Longest Common Substring :pushpin: :pushpin:
+### Longest Common Substring :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **s1** and **s2**. The task is to find the length of the **longest common substring.**_ 
 
@@ -344,8 +339,8 @@ _**Problem Statement:** Given two strings **s1** and **s2**. The task is to find
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- LEETCODE|[Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | [View Solution](./DAY-15/Maximum_Length_of_Repeated_Subarray(LEETCODE).cpp) | Medium |||
- GEEKSFORGEEKS|[Longest Common Substring](https://practice.geeksforgeeks.org/problems/longest-common-substring/0) | [View Solution](./DAY-15/Longest_Common_Substring(GEEKSFORGEEKS).cpp) | Medium ||| 
+ LEETCODE|[Maximum Length of Repeated Subarray](https://leetcode.com/problems/maximum-length-of-repeated-subarray/) | [TODO]() | Medium |||
+ GEEKSFORGEEKS|[Longest Common Substring](https://practice.geeksforgeeks.org/problems/longest-common-substring/0) | [TODO]() | Medium ||| 
   
 #### Let the streak going. Don't give a `<br />` :laughing: :laughing:
 ---
@@ -383,13 +378,12 @@ output => cing
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- HACKERRANK|[The Longest Common Subsequence](https://www.hackerrank.com/challenges/dynamic-programming-classics-the-longest-common-subsequence/problem) | [View Solution](./DAY-16/The_Longest_Common_Subsequence(HACKERRANK).cpp) | Medium |||
-  
-#### I'd Rate My Programming Puns C++ :smirk: :smirk:
+ HACKERRANK|[The Longest Common Subsequence](https://www.hackerrank.com/challenges/dynamic-programming-classics-the-longest-common-subsequence/problem) | [TODO]() | Medium |||
+
 
 ---
 ## DP-17 :notebook:
-### Solved:  Shortest Common Supersequence :pushpin: :pushpin:
+### Shortest Common Supersequence :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **str1** and **str2**, find the length of the smallest string which has both, **str1** and **str2** as its sub-sequences._ 
 
@@ -400,14 +394,14 @@ _**Problem Statement:** Given two strings **str1** and **str2**, find the length
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[Shortest Common Supersequence](https://practice.geeksforgeeks.org/problems/shortest-common-supersequence/0#) | [View Solution](./DAY-17/Shortest_Common_Supersequence(GEEKSFORGEEKS).cpp) | Easy|||
+ GEEKSFORGEEKS |[Shortest Common Supersequence](https://practice.geeksforgeeks.org/problems/shortest-common-supersequence/0#) | [TODO](./DAY-17/Shortest_Common_Supersequence(GEEKSFORGEEKS).cpp) | Easy|||
   
 #### A rabbit aims for the moon  :confused: 
 
 
 ---
 ## DP-18 :orange_book:
-### Solved:  Minimum Number of Deletions and Insertions :pushpin: :pushpin:
+###  Minimum Number of Deletions and Insertions :pushpin: :pushpin:
 
 _**Problem Statement:** Given two strings **str1** and **str2**. Your task is to convert **str1** to **str2**. You can only perform two types of operations that are **remove** or **insert**. Find the minimum number of operations required to convert **str1**  into **str2**._ 
 
@@ -425,7 +419,7 @@ _**Problem Statement:** Given two strings **str1** and **str2**. Your task is to
 
 ---
 ## Day - 19 :blue_book:
-### Solved:  Longest Palindromic Subsequence :pushpin: :pushpin:
+### Longest Palindromic Subsequence :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string **str1**. Your task is to find the Longest Palindromic Subsequence of that string **s1**.._ 
 
@@ -436,15 +430,15 @@ _**Problem Statement:** Given a string **str1**. Your task is to find the Longes
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[Longest Palindromic Subsequence](https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence/0#) | [View Solution](./DAY-19/Longest_Palindromic_Subsequence(GEEKSFORGEEKS).cpp) | Easy|||
-  LEETCODE |[Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) | [View Solution](./DAY-19/Longest_Palindromic_Subsequence(LEETCODE).cpp) | Medium|||
-   INTERVIEWBIT |[Longest Palindromic Subsequence](https://www.interviewbit.com/problems/longest-palindromic-subsequence/) | [View Solution](./DAY-19/Longest_Palindromic_Subsequence(INTERVIEWBIT).cpp) | Medium|||
+ GEEKSFORGEEKS |[Longest Palindromic Subsequence](https://practice.geeksforgeeks.org/problems/longest-palindromic-subsequence/0#) | [TODO]() | Easy|||
+  LEETCODE |[Longest Palindromic Subsequence](https://leetcode.com/problems/longest-palindromic-subsequence/) | [TODO]() | Medium|||
+   INTERVIEWBIT |[Longest Palindromic Subsequence](https://www.interviewbit.com/problems/longest-palindromic-subsequence/) | [TODO]() | Medium|||
   
 #### Be Different.  Be Awesome. :wink: :dizzy: 
 
 ---
 ## DP-20 :green_book:
-### Solved: Minimum Deletions to make string Palindromic :pushpin: :pushpin:
+### Minimum Deletions to make string Palindromic :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string of **s1**. Your task is to remove or delete minimum number of characters from the string so that the resultant string is palindrome._ 
 
@@ -455,7 +449,7 @@ _**Problem Statement:** Given a string of **s1**. Your task is to remove or dele
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[Minimum Deletions](https://practice.geeksforgeeks.org/problems/minimum-deletitions/0) | [View Solution](./DAY-20/Minimum_Deletions(GEEKSFORGEEKS).cpp) | Easy|||
+ GEEKSFORGEEKS |[Minimum Deletions](https://practice.geeksforgeeks.org/problems/minimum-deletitions/0) | [TODO]() | Easy|||
   
 #### Stay Patient. Trust your journey. :relieved: :round_pushpin: 
 
@@ -472,7 +466,7 @@ _**Problem Statement:** Given two strings **str1** and **str2**, print the small
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- LEETCODE |[Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) | [View Solution](./DAY-21/Shortest_Common_Supersequence(LEETCODE).cpp) | Hard|||
+ LEETCODE |[Shortest Common Supersequence](https://leetcode.com/problems/shortest-common-supersequence/) | [TODO]() | Hard|||
   
 #### :yellow_heart:  21-Days Streak. :blue_heart: 21-Days of CP.  :purple_heart: 21-Days of DP :green_heart: 21-Days of OP :heart:
 
@@ -487,14 +481,14 @@ _**Problem Statement:** Given a string  **s**, find the length of the longest re
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[Longest Repeating Subsequence](https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence/0#) | [View Solution](./DAY-22/Longest_Repeating_Subsequence(GEEKSFORGEEKS).cpp) | Easy|||
-  INTERVIEWBIT|[Repeating Sub-Sequence](https://www.interviewbit.com/problems/repeating-subsequence/) | [View Solution](./DAY-22/Repeating_Sub-Sequence(INTERVIEWBIT).cpp) | Medium|||
+ GEEKSFORGEEKS |[Longest Repeating Subsequence](https://practice.geeksforgeeks.org/problems/longest-repeating-subsequence/0#) | [TODO]() | Easy|||
+  INTERVIEWBIT|[Repeating Sub-Sequence](https://www.interviewbit.com/problems/repeating-subsequence/) | [TODO]() | Medium|||
   
 #### Hey ! We are still at Day-0!  :relieved: :relieved:
 
 ---
 ## DP-23  :notebook:
-### Solved: Is Subsequence ? :pushpin: :pushpin:
+### Is Subsequence ? :pushpin: :pushpin:
  _**Problem Statement:** Given two strings **str1** and  **str2**, check if **str1** is subsequence of **str2**.._ 
 
 ```diff
@@ -518,7 +512,7 @@ else
 
 ---
 ## DP-24 :orange_book:
-### Solved: Minimum Insertion Steps to Make a String Palindrome :pushpin: :pushpin:
+### Minimum Insertion Steps to Make a String Palindrome :pushpin: :pushpin:
 
 _**Problem Statement:** Given a string  **s**, find the minimum number of insertion operations you could perform on the string to make the string palindromic._ 
 ```diff
@@ -527,9 +521,9 @@ _**Problem Statement:** Given a string  **s**, find the minimum number of insert
 ### Problem solved
 |  Platform    | Title           |  Solution       | Difficulty    |
 |--------------|---------------- | --------------- |---------------|
- GEEKSFORGEEKS |[Form a palindrome](https://practice.geeksforgeeks.org/problems/form-a-palindrome/0) | [View Solution](./DAY-24/Form_a_palindrome(GEEKSFORGEEKS).cpp) | Medium|||
- LEETCODE|[Minimum Insertion Steps to Make a String Palindrome](https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | [View Solution](./DAY-24/Minimum_Insertion_Steps_to_Make_a_String_Palindrome(LEETCODE).cpp) | Hard|||
-  SPOJ|[IOIPALIN - Palindrome 2000](https://www.spoj.com/problems/IOIPALIN/) | [View Solution](./DAY-24/Palindrome_2000(SPOJ).cpp) | Medium|||
+ GEEKSFORGEEKS |[Form a palindrome](https://practice.geeksforgeeks.org/problems/form-a-palindrome/0) | [TODO]() | Medium|||
+ LEETCODE|[Minimum Insertion Steps to Make a String Palindrome](https://leetcode.com/problems/minimum-insertion-steps-to-make-a-string-palindrome/) | [TODO]() | Hard|||
+  SPOJ|[IOIPALIN - Palindrome 2000](https://www.spoj.com/problems/IOIPALIN/) | [TODO]() | Medium|||
   
 #### Its Okay ! Try Again  :muscle: :angel:
 
@@ -552,7 +546,7 @@ In this approach, we can place parenthesis at all possible places and then calcu
 ---
 
 ## DP-26:green_book:
-### Solved: Matrix Chain Multiplication (Memoisation):pushpin: :pushpin:
+### Matrix Chain Multiplication (Memoisation):pushpin: :pushpin:
 
 _**Problem Statement:** Given an array p[] which represents the chain of matrices such that the ith matrix Ai is of dimension p[i-1] x p[i]. We need to write a function that should return the minimum number of multiplications needed to multiply the chain._ 
 
