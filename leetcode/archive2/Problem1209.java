@@ -7,10 +7,12 @@
  */
 
 import java.util.Stack;
+import javafx.util.Pair;
+
 
 public class Problem1209{
     public static void main(String[] args) {
-        SolutionOptimized sol = new SolutionOptimized();
+        SolutionOptimizedWitPair sol = new SolutionOptimizedWitPair();
 
         System.out.println("Ans: " + sol.removeDuplicates("abcd", 2));
 
@@ -106,6 +108,48 @@ class SolutionOptimized {
             Frequency top = stack.pop();
             for(int i = 0; i < top.i; i++){
                 sb.append(top.c);
+            }
+                
+        }
+
+        return sb.reverse().toString();
+
+    }
+}
+
+class SolutionOptimizedWitPair {
+
+    public String removeDuplicates(String s, int k) {
+        Stack<Pair<Character, Integer>> stack = new Stack<>();
+
+        for(int i=0; i < s.length(); i++){
+            Character currChar = s.charAt(i);
+
+            if(stack.isEmpty()){
+                stack.push(new Pair(currChar, 1));
+            }else{
+                Pair<String, Integer> peek = stack.peek();
+
+                if(peek.getKey() == currChar){
+                    stack.pop();
+                    if(peek.getValue() == k-1){
+                        // System.out.println(peek.c);
+                    }else{
+                        stack.push(new Frequency(currChar, peek.getValue() + 1));
+                    }
+                }else{
+                    stack.push(new Frequency(currChar, 1));
+                }
+
+            }
+        }
+
+        System.out.println(stack);
+        StringBuilder sb = new StringBuilder();
+        while(!stack.isEmpty()){
+            Pair<String, Integer> top = stack.pop();
+            for(int i = 0; i < top.getValue(); i++){
+                sb.append(top.getValue());
             }
                 
         }
